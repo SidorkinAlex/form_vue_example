@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-4">{{ fieldData.lbl }}</div>
     <div class="col-8">
-      <input type="text" :placeholder="fieldData.name" @input="updateFormFields($event.target.value)">
+      <input type="date" :placeholder="fieldData.name" @input="updateFormFields($event.target.value)">
     </div>
   </div>
 </template>
