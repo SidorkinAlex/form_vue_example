@@ -16,6 +16,9 @@ export default {
     updateFormFields(event){
       this.formEventBus.setFieldValues(this.fieldData.name, event)
     }
+  },
+  created() {
+    this.formEventBus.setFieldValues(this.fieldData.name, null)
   }
 
 }
