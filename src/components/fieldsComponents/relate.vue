@@ -14,11 +14,11 @@ export default {
   props:["fieldData","formEventBus"],
   methods:{
     updateFormFields(event){
-      this.formEventBus.setFieldValues(this.fieldData.name, event)
+      this.formEventBus.setFieldValues(this.fieldData.id_name.name, event)
     }
   },
   created() {
-    this.formEventBus.setFieldValues(this.fieldData.name, null)
+    this.formEventBus.setFieldValues(this.fieldData.id_name.name, null)
   }
 }
 </script>
