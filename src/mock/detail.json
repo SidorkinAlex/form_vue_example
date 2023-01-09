@@ -1,0 +1,4498 @@
+{
+  "metadata": {
+    "panels": [
+      {
+        "panel_id": "lbl_default_panel",
+        "lbl": "Первая панель",
+        "rows": [
+          [
+            {
+              "name": "name",
+              "vname": "LBL_NAME",
+              "type": "varchar",
+              "style_type": [
+                "h1",
+                "noname",
+                "fixed",
+                "right"
+              ],
+              "custom_style": "title",
+              "link": true,
+              "dbType": "varchar",
+              "len": "255",
+              "unified_search": true,
+              "full_text_search": {
+                "boost": 3
+              },
+              "required": false,
+              "importable": "required",
+              "duplicate_merge": "disabled",
+              "merge_filter": "disabled",
+              "massupdate": 0,
+              "no_default": false,
+              "comments": "",
+              "help": "",
+              "duplicate_merge_dom_value": "0",
+              "audited": false,
+              "inline_edit": true,
+              "reportable": true,
+              "size": "20",
+              "studio": {
+                "listview": true,
+                "popuplist": false
+              },
+              "value": "",
+              "lbl": "Полное имя"
+            },
+            {
+              "required": false,
+              "name": "photo",
+              "vname": "LBL_PHOTO",
+              "style_type": [
+                "fixed",
+                "right"
+              ],
+              "custom_style": "avatar",
+              "type": "image",
+              "massupdate": 0,
+              "no_default": false,
+              "comments": "Фотография кандидата",
+              "help": "",
+              "importable": "true",
+              "duplicate_merge": "disabled",
+              "duplicate_merge_dom_value": 0,
+              "audited": false,
+              "inline_edit": true,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "len": 255,
+              "limit": 1,
+              "size": "20",
+              "dbType": "varchar",
+              "border": "",
+              "width": "200",
+              "height": "200",
+              "actions": {
+                "link": "/index.php?entryPoint=download&id=${this.id}_photo&type=HRPAC_CANDIDATES",
+                "delete": "index.php?module=${this.module}&record=${this.id}&entryPoint=deleteAttachment&field=photo&id=${this.id}_photo&type=${this.module}&photo_record_id=${this.id}"
+              },
+              "studio": {
+                "listview": true,
+                "popuplist": false
+              },
+              "search_disabled": true,
+              "value": "",
+              "lbl": "Фотография"
+            }
+          ],
+          [
+            {
+              "required": false,
+              "source": "non-db",
+              "name": "location_id",
+              "vname": "LBL_LOCATION_ID",
+              "type": "relate",
+              "massupdate": 0,
+              "no_default": false,
+              "comments": "Местоположение",
+              "help": "",
+              "importable": "true",
+              "duplicate_merge": "disabled",
+              "duplicate_merge_dom_value": "0",
+              "audited": false,
+              "inline_edit": true,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "len": "255",
+              "size": "20",
+              "id_name": {
+                "required": false,
+                "name": "hrpac_cities_id_c",
+                "vname": "LBL_LOCATION_ID_HRPAC_CITIES_ID",
+                "type": "id",
+                "massupdate": 0,
+                "no_default": false,
+                "comments": "",
+                "help": "",
+                "importable": "true",
+                "duplicate_merge": "disabled",
+                "duplicate_merge_dom_value": 0,
+                "audited": false,
+                "inline_edit": true,
+                "reportable": false,
+                "unified_search": false,
+                "merge_filter": "disabled",
+                "len": 36,
+                "size": "20",
+                "search_disabled": true,
+                "value": ""
+              },
+              "ext2": "HRPAC_CITIES",
+              "module": "HRPAC_CITIES",
+              "rname": "name",
+              "quicksearch": "enabled",
+              "studio": {
+                "listview": true,
+                "popuplist": false
+              },
+              "table_option": {
+                "table": "hrpac_cities",
+                "fields_in_table": {
+                  "0": "id",
+                  "name": [
+                    "name"
+                  ]
+                }
+              },
+              "value": "",
+              "lbl": "Локация"
+            }
+          ],
+          [
+            {
+              "name": "age",
+              "required": false,
+              "vname": "LBL_AGE",
+              "type": "varchar",
+              "massupdate": 0,
+              "no_default": false,
+              "comments": "",
+              "help": "",
+              "importable": "true",
+              "duplicate_merge": "disabled",
+              "duplicate_merge_dom_value": "0",
+              "audited": false,
+              "inline_edit": true,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "len": "3",
+              "size": "20",
+              "source": "non-db",
+              "studio": {
+                "listview": true,
+                "popuplist": false
+              },
+              "search_disabled": true,
+              "value": "",
+              "lbl": "Возраст"
+            }
+          ],
+          [
+            {
+              "name": "communications",
+              "type": "MeansCommunication",
+              "vname": "LBL_COMMUNICATIONS",
+              "massupdate": 0,
+              "audited": false,
+              "inline_edit": false,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "dbType": "text",
+              "studio": {
+                "listview": true,
+                "popuplist": false
+              },
+              "required": true,
+              "search_disabled": true,
+              "value": [],
+              "option": {
+                "value_type_list": {
+                  "phone": "Телефон",
+                  "email": "E-Mail",
+                  "skype": "Skype",
+                  "telegram": "Telegram",
+                  "facebook": "Facebook",
+                  "habr": "Хабр.Карьера",
+                  "linkedin": "LinkedIn",
+                  "vkontakte": "Вконтакте",
+                  "instagram": "Instagram",
+                  "site": "Сайт",
+                  "freelance": "Freelance",
+                  "icq": "ICQ",
+                  "livejournal": "LiveJournal",
+                  "moi_krug": "Мой Круг"
+                }
+              },
+              "lbl": "Средства Связи"
+            }
+          ]
+        ]
+      },
+      {
+        "panel_id": "lbl_tags_panel",
+        "lbl": "Теги",
+        "rows": [
+          [
+            {
+              "name": "tags_ids",
+              "vname": "LBL_HRPAC_TAGS",
+              "type": "rellink",
+              "massupdate": 0,
+              "no_default": false,
+              "comments": "",
+              "help": "",
+              "importable": "true",
+              "duplicate_merge": "disabled",
+              "duplicate_merge_dom_value": "0",
+              "audited": false,
+              "inline_edit": false,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "source": "non-db",
+              "link": "hrpac_candidates_hrpack_tags",
+              "table": "hrpac_tags",
+              "fields_in_table": [
+                "id",
+                "name",
+                "my_tag"
+              ],
+              "detail_format": [
+                "name"
+              ],
+              "table_option": {
+                "table": "hrpac_tags",
+                "fields_in_table": {
+                  "0": "id",
+                  "1": "my_tag",
+                  "name": [
+                    "name"
+                  ]
+                }
+              },
+              "studio": {
+                "listview": true,
+                "popuplist": false
+              },
+              "rellink_child": "tags_ids_val",
+              "fill_visual_value": true,
+              "option_url": "index.php?module=HRPAC_CANDIDATES&to_pdf=true&action=get_rel_fields_values&iteration=0&field=tags_ids&search_string=",
+              "visual_value": [],
+              "search_disabled": true,
+              "value": "",
+              "lbl": "Теги"
+            }
+          ]
+        ]
+      },
+      {
+        "panel_id": "lbl_common_info_panel",
+        "lbl": "Общая информация",
+        "rows": [
+          [
+            {
+              "required": false,
+              "name": "pd_status",
+              "vname": "LBL_PD_STATUS",
+              "type": "enum",
+              "massupdate": 0,
+              "default": "not_sent",
+              "no_default": false,
+              "comments": "Обработка персональных данных",
+              "help": "",
+              "importable": "true",
+              "duplicate_merge": "disabled",
+              "duplicate_merge_dom_value": "0",
+              "audited": false,
+              "inline_edit": true,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "len": 100,
+              "size": "20",
+              "options": {
+                "not_sent": "Не отправлено",
+                "sent": "Ожидание согласия на ОПД",
+                "accepted": "Согласие на ОПД получено",
+                "denied": "Отказ от ОПД"
+              },
+              "studio": {
+                "listview": true,
+                "popuplist": false
+              },
+              "dependency": false,
+              "search_disabled": true,
+              "autocomplete": false,
+              "value": "not_sent",
+              "label": "LBL_PND_AGREEMENT",
+              "lbl": "Согласие ПнД"
+            }
+          ],
+          [
+            {
+              "name": "nationality",
+              "type": "multienum",
+              "multiple": true,
+              "vname": "LBL_NATIONALITY",
+              "massupdate": 0,
+              "audited": false,
+              "inline_edit": false,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "studio": {
+                "listview": false,
+                "popuplist": false
+              },
+              "required": false,
+              "options": {
+                "": "",
+                "ABU DHABI": "АБУ-ДАБИ",
+                "ADEN": "АДЕН",
+                "AFGHANISTAN": "АФГАНИСТАН",
+                "ALBANIA": "АЛБАНИЯ",
+                "ALGERIA": "АЛЖИР",
+                "AMERICAN SAMOA": "ВОСТОЧНОЕ САМОА",
+                "ANDORRA": "АНДОРРА",
+                "ANGOLA": "АНГОЛА",
+                "ANTARCTICA": "АНТАРКТИДА",
+                "ANTIGUA": "АНТИГУА",
+                "ARGENTINA": "АРГЕНТИНА",
+                "ARMENIA": "АРМЕНИЯ",
+                "ARUBA": "АРУБА",
+                "AUSTRALIA": "АВСТРАЛИЯ",
+                "AUSTRIA": "АВСТРИЯ",
+                "AZERBAIJAN": "АЗЕРБАЙДЖАН",
+                "BAHAMAS": "БАГАМСКИЕ ОСТРОВА",
+                "BAHRAIN": "БАХРЕЙН",
+                "BANGLADESH": "БАНГЛАДЕШ",
+                "BARBADOS": "БАРБАДОС",
+                "BELARUS": "БЕЛАРУССИЯ",
+                "BELGIUM": "БЕЛЬГИЯ",
+                "BELIZE": "БЕЛИЗ",
+                "BENIN": "БЕНИН",
+                "BERMUDA": "БЕРМУДСКИЕ ОСТРОВА",
+                "BHUTAN": "БУТАН",
+                "BOLIVIA": "БОЛИВИЯ",
+                "BOSNIA": "БОСНИЯ",
+                "BOTSWANA": "БОТСВАНА",
+                "BOUVET ISLAND": "ОСТРОВ БОВЕ",
+                "BRAZIL": "БРАЗИЛИЯ",
+                "BRITISH ANTARCTICA TERRITORY": "БРИТАНСКАЯ АНТАРКТИЧЕСКАЯ ТЕРРИТОРИЯ",
+                "BRITISH INDIAN OCEAN TERRITORY": "БРИТАНСКАЯ ТЕРРИТОРИЯ В ИНДИЙСКОМ ОКЕАНЕ",
+                "BRITISH VIRGIN ISLANDS": "ВИРГИНСКИЕ ОСТРОВА - ВЕЛИКОБРИТАНИЯ",
+                "BRITISH WEST INDIES": "КАРИБСКИЕ ОСТРОВА - ВЕЛИКОБРИТАНИЯ",
+                "BRUNEI": "БРУНЕЙ",
+                "BULGARIA": "БОЛГАРИЯ",
+                "BURKINA FASO": "БУРКИНА-ФАСО",
+                "BURUNDI": "БУРУНДИ",
+                "CAMBODIA": "КАМБОДЖИЯ",
+                "CAMEROON": "КАМЕРУН",
+                "CANADA": "КАНАДА",
+                "CANAL ZONE": "ЗОНА ПАНАМСКОГО КАНАЛА",
+                "CANARY ISLAND": "КАНАРСКИЕ ОСТРОВА",
+                "CAPE VERDI ISLANDS": "ОСТРОВА ЗЕЛЁНОГО МЫСА",
+                "CAYMAN ISLANDS": "КАЙМАНОВЫ ОСТРОВА",
+                "CHAD": "ЧАД",
+                "CHANNEL ISLAND UK": "НОРМАНДСКИЕ ОСТРОВА",
+                "CHILE": "ЧИЛИ",
+                "CHINA": "КИТАЙ",
+                "CHRISTMAS ISLAND": "ОСТРОВ РОЖДЕСТВА",
+                "COCOS (KEELING) ISLAND": "КОКОСОВЫЕ ОСТРОВА",
+                "COLOMBIA": "КОЛУМБИЯ",
+                "COMORO ISLANDS": "КОМОРСКИЕ ОСТРОВА",
+                "CONGO": "КОНГО",
+                "CONGO KINSHASA": "ЗАИР",
+                "COOK ISLANDS": "ОСТРОВА КУКА",
+                "COSTA RICA": "КОСТА-РИКА",
+                "CROATIA": "ХОРВАТИЯ",
+                "CUBA": "КУБА",
+                "CURACAO": "КЮРАСАО",
+                "CYPRUS": "КИПР",
+                "CZECH REPUBLIC": "ЧЕХИЯ",
+                "DAHOMEY": "БЕНИН",
+                "DENMARK": "ДАНИЯ",
+                "DJIBOUTI": "ДЖИБУТИ",
+                "DOMINICA": "ДОМИНИКА",
+                "DOMINICAN REPUBLIC": "ДОМИНИКАНСКАЯ РЕСПУБЛИКА",
+                "DUBAI": "ДУБАЙ",
+                "ECUADOR": "ЭКВАДОР",
+                "EGYPT": "ЕГИПЕТ",
+                "EL SALVADOR": "САЛЬВАДОР",
+                "EQUATORIAL GUINEA": "ЭКВАТОРИАЛЬНАЯ ГВИНЕЯ",
+                "ESTONIA": "ЭСТОНИЯ",
+                "ETHIOPIA": "ЭФИОПИЯ",
+                "FAEROE ISLANDS": "ФАРЕРСКИЕ ОСТРОВА",
+                "FALKLAND ISLANDS": "ФОЛКЛЕНДСКИЕ ОСТРОВА",
+                "FIJI": "ФИДЖИ",
+                "FINLAND": "ФИНЛЯНДИЯ",
+                "FRANCE": "ФРАНЦИЯ",
+                "FRENCH GUIANA": "ФРАНЦУЗСКАЯ ГВИАНА",
+                "FRENCH POLYNESIA": "ФРАНЦУЗСКАЯ ПОЛИНЕЗИЯ",
+                "GABON": "ГАБОН",
+                "GAMBIA": "ГАМБИЯ",
+                "GEORGIA": "ГРУЗИЯ",
+                "GERMANY": "ГЕРМАНИЯ",
+                "GHANA": "ГАНА",
+                "GIBRALTAR": "ГИБРАЛТАР",
+                "GREECE": "ГРЕЦИЯ",
+                "GREENLAND": "ГРЕНЛАНДИЯ",
+                "GUADELOUPE": "ГВАДЕЛУПА",
+                "GUAM": "ГУАМ",
+                "GUATEMALA": "ГВАТЕМАЛА",
+                "GUINEA": "ГВИНЕЯ",
+                "GUYANA": "ГАЙАНА",
+                "HAITI": "ГАИТИ",
+                "HONDURAS": "ГОНДУРАС",
+                "HONG KONG": "ГОНКОНГ",
+                "HUNGARY": "ВЕНГРИЯ",
+                "ICELAND": "ИСЛАНДИЯ",
+                "IFNI": "ИФНИ",
+                "INDIA": "ИНДИЯ",
+                "INDONESIA": "ИНДОНЕЗИЯ",
+                "IRAN": "ИРАН",
+                "IRAQ": "ИРАК",
+                "IRELAND": "ИРЛАНДИЯ",
+                "ISRAEL": "ИЗРАИЛЬ",
+                "ITALY": "ИТАЛИЯ",
+                "IVORY COAST": "БЕРЕГ СЛОНОВОЙ КОСТИ",
+                "JAMAICA": "ЯМАЙКА",
+                "JAPAN": "ЯПОНИЯ",
+                "JORDAN": "ИОРДАНИЯ",
+                "KAZAKHSTAN": "КАЗАХСТАН",
+                "KENYA": "КЕНИЯ",
+                "KOREA": "КНДР",
+                "KOREA, SOUTH": "ЮЖНАЯ КОРЕЯ",
+                "KUWAIT": "КУВЕЙТ",
+                "KYRGYZSTAN": "КИРГИЗИЯ",
+                "LAOS": "ЛАОС",
+                "LATVIA": "ЛАТВИЯ",
+                "LEBANON": "ЛЕВАН",
+                "LEEWARD ISLANDS": "ПОДВЕТРЕННЫЕ ОСТРОВА",
+                "LESOTHO": "ЛЕСОТО",
+                "LIBYA": "ЛИВИЯ",
+                "LIECHTENSTEIN": "ЛИХТЕНШТЕЙН",
+                "LITHUANIA": "ЛИТВА",
+                "LUXEMBOURG": "ЛЮКСЕМБУРГ",
+                "MACAO": "МАКАО",
+                "MACEDONIA": "МАКЕДОНИЯ",
+                "MADAGASCAR": "МАДАГАСКАР",
+                "MALAWI": "МАЛАВИ",
+                "MALAYSIA": "МАЛАЙЗИЯ",
+                "MALDIVES": "МАЛЬДИВЫ",
+                "MALI": "МАЛИ",
+                "MALTA": "МАЛЬТА",
+                "MARTINIQUE": "МАРТИНИКА",
+                "MAURITANIA": "МАВРИТАНИЯ",
+                "MAURITIUS": "МАВРИКИЙ",
+                "MELANESIA": "МЕЛАНЕЗИЯ",
+                "MEXICO": "МЕКСИКА",
+                "MOLDOVIA": "МОЛДАВИЯ",
+                "MONACO": "МОНАКО",
+                "MONGOLIA": "МОНГОЛИЯ",
+                "MOROCCO": "МАРОККО",
+                "MOZAMBIQUE": "МОЗАМБИК",
+                "MYANAMAR": "МЬЯНМА",
+                "NAMIBIA": "НАМИБИЯ",
+                "NEPAL": "НЕПАЛ",
+                "NETHERLANDS": "НИДЕРЛАНДЫ",
+                "NETHERLANDS ANTILLES": "АНТИЛЬСКИЕ ОСТРОВА",
+                "NETHERLANDS ANTILLES NEUTRAL ZONE": "АНТИЛЬСКИЕ ОСТРОВА-НЕЙТРАЛЬНАЯ ЗОНА",
+                "NEW CALADONIA": "НОВАЯ КАЛЕДОНИЯ",
+                "NEW HEBRIDES": "НОВЫЕ ГЕБРИДЫ",
+                "NEW ZEALAND": "НОВАЯ ЗЕЛАНДИЯ",
+                "NICARAGUA": "НИКАРАГУА",
+                "NIGER": "НИГЕР",
+                "NIGERIA": "НИГЕРИЯ",
+                "NORFOLK ISLAND": "НОРФОЛКСКИЕ ОСТРОВА",
+                "NORWAY": "НОРВЕГИЯ",
+                "OMAN": "ОМАН",
+                "OTHER": "Другое",
+                "PACIFIC ISLAND": "МАРИАНСКИЕ ОСТРОВА",
+                "PAKISTAN": "ПАКИСТАН",
+                "PANAMA": "ПАНАМА",
+                "PAPUA NEW GUINEA": "ПАПУА-НОВАЯ ГВИНЕЯ",
+                "PARAGUAY": "ПАРАГВАЙ",
+                "PERU": "ПЕРУ",
+                "PHILIPPINES": "ФИЛИПИНЫ",
+                "POLAND": "ПОЛЬША",
+                "PORTUGAL": "ПОРТУГАЛИЯ",
+                "PORTUGUESE TIMOR": "ВОСТОЧНЫЙ ТИМОР",
+                "PUERTO RICO": "ПУЭРТО-РИКО",
+                "QATAR": "КАТАР",
+                "REPUBLIC OF BELARUS": "БЕЛАРУСЬ",
+                "REPUBLIC OF SOUTH AFRICA": "ЮЖНО-АФРИКАНСКАЯ РЕСПУБЛИКА",
+                "REUNION": "РЕЮНЬОН",
+                "ROMANIA": "РУМЫНИЯ",
+                "RUSSIA": "РОССИЯ",
+                "RWANDA": "РУАНДА",
+                "RYUKYU ISLANDS": "ОСТРОВА РЮКЮ (НАНСЕЙ)",
+                "SABAH": "МАЛАЙЗИЯ",
+                "SAN MARINO": "САН-МАРИНО",
+                "SAUDI ARABIA": "САУДОВСКАЯ АРАВИЯ",
+                "SENEGAL": "СЕНЕГАЛ",
+                "SERBIA": "СЕРБИЯ",
+                "SEYCHELLES": "СЕЙШЕЛЬСКИЕ ОСТРОВА",
+                "SIERRA LEONE": "СЬЕРРА-ЛЕОНЕ ",
+                "SINGAPORE": "СИНГАПУР",
+                "SLOVAKIA": "СЛОВАКИЯ",
+                "SLOVENIA": "СЛОВЕНИЯ",
+                "SOMALILIAND": "СОМАЛИ",
+                "SOUTH AFRICA": "ЮЖНАЯ АФРИКА",
+                "SOUTH YEMEN": "ЮЖНЫЙ ЙЕМЕН",
+                "SPAIN": "ИСПАНИЯ",
+                "SPANISH SAHARA": "ЗАПАДНАЯ САХАРА",
+                "SRI LANKA": "ШРИ-ЛАНКА",
+                "ST. KITTS AND NEVIS": "СЕНТ-КИТС И НЕВИС",
+                "ST. LUCIA": "СЕНТ-ЛЮСИЯ",
+                "SUDAN": "СУДАН",
+                "SURINAM": "СУРИНАМ",
+                "SW AFRICA": "НАМИБИЯ",
+                "SWAZILAND": "СВАЗИЛЕНД",
+                "SWEDEN": "ШВЕЦИЯ",
+                "SWITZERLAND": "ШВЕЙЦАРИЯ",
+                "SYRIA": "СИРИЯ",
+                "TAIWAN": "ТАЙВАНЬ",
+                "TAJIKISTAN": "ТАДЖИКИСТАН",
+                "TANZANIA": "ТАНЗАНИЯ",
+                "THAILAND": "ТАИЛАНД",
+                "TONGA": "ТОНГА",
+                "TRINIDAD": "ТРИНИДАД",
+                "TUNISIA": "ТУНИС",
+                "TURKEY": "ТУРЦИЯ",
+                "UGANDA": "УГАНДА",
+                "UKRAINE": "УКРАИНА",
+                "UNITED ARAB EMIRATES": "ОАЭ",
+                "UNITED KINGDOM": "ВЕЛИКОБРИТАНИЯ",
+                "URUGUAY": "УРУГВАЙ",
+                "US PACIFIC ISLAND": "МАРИАНСКИЕ ОСТРОВА-США",
+                "US VIRGIN ISLANDS": "ВИРГИНСКИЕ ОСТРОВА-США",
+                "USA": "США",
+                "UZBEKISTAN": "УЗБЕКИСТАН",
+                "VANUATU": "ВАНУАТУ",
+                "VATICAN CITY": "ВАТИКАН",
+                "VENEZUELA": "ВЕНЕСУЭЛА",
+                "VIETNAM": "ВЬЕТНАМ",
+                "WAKE ISLAND": "ОКЕАНИЯ",
+                "WEST INDIES": "КАРИБСКИЕ ОСТРОВА",
+                "WESTERN SAHARA": "ЗАПАДНАЯ САХАРА",
+                "YEMEN": "ЙЕМЕН",
+                "ZAIRE": "ЗАИР",
+                "ZAMBIA": "ЗАМБИЯ",
+                "ZIMBABWE": "ЗИМБАБВЕ"
+              },
+              "search_disabled": true,
+              "autocomplete": false,
+              "value": "",
+              "label": "LBL_NATIONALITY",
+              "lbl": "Гражданство"
+            }
+          ],
+          [
+            {
+              "name": "date_entered",
+              "vname": "LBL_DATE_ENTERED",
+              "type": "datetime",
+              "group": "created_by_name",
+              "comment": "Date record created",
+              "enable_range_search": true,
+              "options": {
+                "=": "Равно",
+                "not_equal": "Не равно",
+                "greater_than": "После",
+                "less_than": "До",
+                "last_7_days": "Прошедшие 7 дней",
+                "next_7_days": "Следующие 7 дней",
+                "last_30_days": "Прошедшие 30 дней",
+                "next_30_days": "Следующие 30 дней",
+                "last_month": "Прошлый месяц",
+                "this_month": "Этот месяц",
+                "next_month": "Следующий месяц",
+                "last_year": "Прошлый год",
+                "this_year": "Этот год",
+                "next_year": "Следующий год",
+                "between": "Между"
+              },
+              "inline_edit": false,
+              "search_disabled": true,
+              "autocomplete": false,
+              "value": "26.12.2022 13:56",
+              "label": "LBL_DATE_ENTERED",
+              "lbl": "Дата создания"
+            }
+          ],
+          [
+            {
+              "required": true,
+              "source": "non-db",
+              "name": "resume_source_id",
+              "vname": "LBL_RESUME_SOURCE",
+              "type": "relate",
+              "massupdate": 0,
+              "no_default": false,
+              "comments": "",
+              "help": "",
+              "importable": "true",
+              "duplicate_merge": "disabled",
+              "duplicate_merge_dom_value": "0",
+              "audited": false,
+              "inline_edit": true,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "len": "255",
+              "size": "20",
+              "id_name": {
+                "required": false,
+                "name": "hrpac_sources_id_c",
+                "vname": "LBL_RESUME_SOURCE_ID_HRPAC_SOURCES_ID",
+                "type": "id",
+                "massupdate": 0,
+                "no_default": false,
+                "comments": "",
+                "help": "",
+                "importable": "true",
+                "duplicate_merge": "disabled",
+                "duplicate_merge_dom_value": 0,
+                "audited": false,
+                "inline_edit": true,
+                "reportable": false,
+                "unified_search": false,
+                "merge_filter": "disabled",
+                "len": 36,
+                "size": "20",
+                "search_disabled": true,
+                "value": ""
+              },
+              "ext2": "HRPAC_SOURCES",
+              "module": "HRPAC_SOURCES",
+              "rname": "name",
+              "quicksearch": "enabled",
+              "studio": {
+                "listview": false,
+                "popuplist": false
+              },
+              "table_option": {
+                "table": "hrpac_sources",
+                "fields_in_table": {
+                  "0": "id",
+                  "name": [
+                    "name"
+                  ]
+                }
+              },
+              "search_disabled": true,
+              "value": "",
+              "label": "LBL_RESUME_FROM_SOURCE",
+              "lbl": "Источник привелечения"
+            }
+          ],
+          [
+            {
+              "required": false,
+              "name": "birth_date",
+              "vname": "LBL_BIRTH_DATE",
+              "type": "date",
+              "massupdate": 0,
+              "no_default": false,
+              "comments": "Дата рождения кандидата",
+              "help": "",
+              "importable": "true",
+              "duplicate_merge": "disabled",
+              "duplicate_merge_dom_value": "0",
+              "audited": false,
+              "inline_edit": true,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "size": "20",
+              "enable_range_search": false,
+              "search_disabled": true,
+              "value": "",
+              "label": "LBL_BIRTH_DATE",
+              "lbl": "Дата рождения"
+            }
+          ],
+          [
+            {
+              "required": false,
+              "name": "gender",
+              "vname": "LBL_GENDER",
+              "type": "enum",
+              "massupdate": 0,
+              "default": "MALE",
+              "no_default": false,
+              "comments": "Пол кандидата",
+              "help": "",
+              "importable": "true",
+              "duplicate_merge": "disabled",
+              "duplicate_merge_dom_value": "0",
+              "audited": false,
+              "inline_edit": true,
+              "reportable": true,
+              "unified_search": false,
+              "merge_filter": "disabled",
+              "len": 100,
+              "size": "20",
+              "options": {
+                "MALE": "Мужской",
+                "FEMALE": "Женский"
+              },
+              "studio": {
+                "listview": false,
+                "popuplist": false
+              },
+              "dependency": false,
+              "autocomplete": false,
+              "value": "MALE",
+              "label": "LBL_GENDER",
+              "lbl": "Пол"
+            }
+          ]
+        ]
+      }
+    ],
+    "buttons_menu": [
+      [
+        {
+          "id": "apply_for",
+          "lbl": {
+            "name": "LBL_APPLY_FOR",
+            "type": "string",
+            "value": "Прикрепить к вакансии"
+          },
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/Plus.svg",
+          "type": "menu_button",
+          "colorVisualClass": "blue",
+          "sizeVisualClass": "big",
+          "custom_display": true,
+          "intents": [
+            {
+              "intentArea": "DynamicPage",
+              "intentType": "list",
+              "module": "HRPAC_VACANCY",
+              "action": "list",
+              "request": {
+                "url": "/index.php?module=HRPAC_VACANCY&action=Popup&only_assigned=1&lsvo=DESC",
+                "request_params": {
+                  "candidate_id": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                  "user_id": "8aab74c4-59d9-a264-652f-63aebb5be68c",
+                  "jsqon_return": 1,
+                  "to_pdf": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "send_mail",
+          "lbl": {
+            "name": "LBL_MAIL",
+            "type": "string",
+            "value": "Почта"
+          },
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/MailOutgoing.svg",
+          "type": "menu_button",
+          "colorVisualClass": "blue",
+          "sizeVisualClass": "big",
+          "custom_display": true,
+          "intents": [
+            {
+              "intentArea": "Popup",
+              "intentType": "edit",
+              "module": "Email",
+              "request": {
+                "url": "/index.php?module=Emails&action=get_EditView&loadedAction=get_EditView&parent_type=HRPAC_CANDIDATES&type=out&to_pdf=true&jsqon_return=1",
+                "request_params": {
+                  "parent_id": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                  "candidate_id": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "create_event",
+          "lbl": {
+            "name": "LBL_CREATE_EVENT_BUTTON",
+            "type": "string",
+            "value": "Событие"
+          },
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/NewEvent.svg",
+          "type": "menu_button",
+          "colorVisualClass": "blue",
+          "sizeVisualClass": "big",
+          "custom_display": true,
+          "intents": [
+            {
+              "intentArea": "Popup",
+              "intentType": "edit",
+              "request": {
+                "url": "/index.php?module=HRPAC_EVENT&action=get_EditView",
+                "request_params": {
+                  "fields[id]": "",
+                  "event_id": "",
+                  "hrpac_candidate_id": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                  "jsqon_return": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "add_tag",
+          "lbl": {
+            "name": "LBL_HRPAC_TAG",
+            "type": "string",
+            "value": "Тег"
+          },
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/Tag.svg",
+          "type": "menu_button",
+          "colorVisualClass": "blue",
+          "sizeVisualClass": "big",
+          "custom_display": true,
+          "intents": [
+            {
+              "intentArea": "Popup",
+              "intentType": "edit",
+              "module": "HRPAC_TAGS",
+              "request": {
+                "url": "/index.php?module=HRPAC_TAGS&action=editView&to_pdf=true",
+                "request_params": {
+                  "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "actions",
+          "type": "parent",
+          "colorVisualClass": "blue",
+          "sizeVisualClass": "big",
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/MoreVertical.svg",
+          "intents": null,
+          "child": [
+            {
+              "id": "add_contact",
+              "lbl": {
+                "name": "LBL_CONTACT_BUTTON",
+                "type": "string",
+                "value": "Контакт"
+              },
+              "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/Phone.svg",
+              "type": "menu_button",
+              "colorVisualClass": "white",
+              "sizeVisualClass": "big",
+              "intents": [
+                {
+                  "intentArea": "Popup",
+                  "intentType": "edit",
+                  "module": "HRPAC_CANDIDATES",
+                  "request": {
+                    "url": "/index.php?module=HRPAC_CANDIDATES&action=getPopupView",
+                    "request_params": []
+                  }
+                }
+              ]
+            },
+            {
+              "id": "save_resume",
+              "lbl": {
+                "name": "LBL_SAVE_RESUME",
+                "type": "string",
+                "value": "Сохранить резюме"
+              },
+              "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/Download.svg",
+              "type": "menu_button",
+              "colorVisualClass": "white",
+              "sizeVisualClass": "big",
+              "custom_display": true,
+              "intents": [
+                {
+                  "intentArea": "Popup",
+                  "intentType": "edit",
+                  "module": "HRPAC_CANDIDATES",
+                  "action": "",
+                  "request": {
+                    "url": "/index.php?module=HRPAC_CANDIDATES&action=getPopupView",
+                    "request_params": []
+                  }
+                }
+              ]
+            },
+            {
+              "id": "send_pd",
+              "lbl": {
+                "name": "LBL_SEND_PD",
+                "type": "string",
+                "value": "Отправить согласие ПнД"
+              },
+              "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/Send.svg",
+              "type": "menu_button",
+              "colorVisualClass": "white",
+              "sizeVisualClass": "big",
+              "custom_display": true,
+              "custom_acl_check": {
+                "acl_module_name": "HRPAC_COORDINATION_REQUESTS",
+                "acl_action_name": "detail"
+              },
+              "intents": [
+                {
+                  "intentArea": "DynamicPage",
+                  "intentType": "detail",
+                  "module": "HRPAC_COORDINATION_REQUESTS",
+                  "action": "DetailView",
+                  "request": {
+                    "url": "/index.php?module=HRPAC_COORDINATION_REQUESTS&action=DetailView",
+                    "request_params": {
+                      "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                      "to_pdf": true
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "share_candidate_in_telegram",
+              "lbl": {
+                "name": "LBL_SHARE_CANDIDATE_IN_TELEGRAM",
+                "type": "string",
+                "value": "Поделиться"
+              },
+              "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/Share.svg",
+              "type": "menu_button",
+              "colorVisualClass": "white",
+              "sizeVisualClass": "big",
+              "intents": [
+                {
+                  "intentArea": "Popup",
+                  "intentType": "edit",
+                  "module": "HRPAC_CANDIDATES",
+                  "request": {
+                    "url": "/index.php?module=HRPAC_CANDIDATES&action=getPopupShareCandidate",
+                    "request_params": {
+                      "candidate_id": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "delete",
+              "lbl": {
+                "name": "LBL_CANDIDATE_DELETE",
+                "type": "string",
+                "value": "Удалить кандидата"
+              },
+              "icon": "/modules/HRPAC_CANDIDATES/icons/detail/pageButtons/Delete.svg",
+              "colorVisualClass": "white",
+              "sizeVisualClass": "big",
+              "type": "menu_button",
+              "custom_display": true,
+              "intents": [
+                {
+                  "intentArea": "Popup",
+                  "intentType": "confirm",
+                  "module": "HRPAC_CANDIDATES",
+                  "request": {
+                    "url": "/index.php?module=HRPAC_CANDIDATES&action=get_PopupDeleteCandidate",
+                    "request_params": {
+                      "candidate_id": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    ],
+    "subpanels": {
+      "panelColumn": [
+        {
+          "id": "resume",
+          "name": "HRPAC_CANDIDATE_RESUME_DESCRIPTION",
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/subpanels/resume/Avatar.svg",
+          "type": "resume",
+          "lbl": {
+            "name": "LBL_RESUME_SUBPANEL",
+            "type": "string",
+            "value": "Резюме"
+          },
+          "intents": [
+            {
+              "intentArea": "subpanelUpload",
+              "intentType": "detail",
+              "request": {
+                "url": "/index.php?module=HRPAC_CANDIDATES&action=GetResumeDescriptionView",
+                "request_params": {
+                  "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "events",
+          "name": "CANDIDATES_EVENTS",
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/subpanels/events/Calendar.svg",
+          "type": "subpanel",
+          "lbl": {
+            "name": "LBL_CANDIDATE_EVENTS_SUBPANEL",
+            "type": "string",
+            "value": "События"
+          },
+          "intents": [
+            {
+              "intentArea": "subpanelUpload",
+              "intentType": "subpanel",
+              "request": {
+                "url": "/index.php?module=HRPAC_CANDIDATES&action=get_subpanel_json_data_SPA",
+                "request_params": {
+                  "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                  "subpanel": "hrpac_candidate_hrpac_event_link",
+                  "sort_by": "date_modified",
+                  "type_sort": "ASC",
+                  "to_pdf": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "checklist",
+          "name": "interview_report",
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/subpanels/checklist/Checklist.svg",
+          "type": "checklist",
+          "lbl": {
+            "name": "LBL_INTERVIEW_REPORT_SUBPANEL",
+            "type": "string",
+            "value": "Чек-лист"
+          },
+          "intents": [
+            {
+              "intentArea": "subpanelUpload",
+              "intentType": "subpanel",
+              "request": {
+                "url": "/index.php?module=IR_INTERVIEW_REPORT&action=getChecklistSubpanelData&to_pdf=true",
+                "request_params": {
+                  "candidate_id": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "comments",
+          "name": "CANDIDATES_COMMENTS",
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/subpanels/comments/Message.svg",
+          "type": "comments",
+          "lbl": {
+            "name": "LBL_COMMENTS",
+            "type": "string",
+            "value": "Комментарии"
+          },
+          "intents": [
+            {
+              "intentArea": "subpanelUpload",
+              "intentType": "subpanel",
+              "request": {
+                "url": "/index.php?module=HRPAC_CANDIDATES&action=get_subpanel_json_data",
+                "request_params": {
+                  "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                  "subpanel": "hrpac_candidates_hrpac_comments_1",
+                  "sort_by": "date_modified",
+                  "type_sort": "ASC"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "communications",
+          "name": "CANDIDATES_COMMUNICATIONS",
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/subpanels/communications/Globe.svg",
+          "type": "communications",
+          "lbl": {
+            "name": "LBL_CANDIDATE_COMMUNICATIONS_SUBPANEL",
+            "type": "string",
+            "value": "Коммуникации"
+          },
+          "intents": [
+            {
+              "intentArea": "subpanelUpload",
+              "intentType": "subpanel",
+              "request": {
+                "url": "/index.php?module=HRPAC_CANDIDATES&action=subpanel_json_data",
+                "request_params": {
+                  "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                  "subpanel": "hrpac_candidates_emails",
+                  "inline": "1",
+                  "sort_order": "desc",
+                  "HRPAC_CANDIDATES_hrpac_candidates_emails_CELL_ORDER_BY": "date_entered",
+                  "HRPAC_CANDIDATES_hrpac_candidates_emails_CELL_offset": 0,
+                  "to_pdf": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "documents",
+          "name": "documents",
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/subpanels/documents/Documents.svg",
+          "type": "documents",
+          "lbl": {
+            "name": "LBL_DOCUMENTS_SUBPANEL",
+            "type": "string",
+            "value": "Документы"
+          },
+          "intents": [
+            {
+              "intentArea": "subpanelUpload",
+              "intentType": "subpanel",
+              "module": "HRPAC_CANDIDATES",
+              "action": "get_subpanel_json_data",
+              "request": {
+                "url": "/index.php?module=HRPAC_CANDIDATES&action=get_subpanel_json_data&subpanel=hrpac_candidates_documents_1",
+                "request_params": {
+                  "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "audit",
+          "name": "audit",
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/subpanels/history/Clock.svg",
+          "type": "audit",
+          "lbl": {
+            "name": "LBL_AUDIT_SUBPANEL",
+            "type": "string",
+            "value": "История"
+          },
+          "intents": [
+            {
+              "intentArea": "subpanelUpload",
+              "intentType": "subpanel",
+              "module": "Audit",
+              "action": "Popup",
+              "request": {
+                "url": "/index.php?module=Audit&action=Popup",
+                "request_params": {
+                  "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                  "module_name": "HRPAC_CANDIDATES",
+                  "count": "25"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "title": {
+      "icon": "/modules/HRPAC_CANDIDATES/icons/detail/header/Users.svg",
+      "main": [
+        {
+          "lbl": {
+            "name": "LBL_MODULE_TITLE",
+            "type": "string",
+            "value": "Кандидаты"
+          },
+          "name": "candidates_list",
+          "type": "link",
+          "intents": [
+            {
+              "intentArea": "DynamicPage",
+              "intentType": "list",
+              "module": "HRPAC_CANDIDATES",
+              "action": "index",
+              "request": {
+                "url": "/index.php?module=HRPAC_CANDIDATES"
+              }
+            }
+          ]
+        },
+        {
+          "name": "candidate_name",
+          "type": "menu_button",
+          "lbl": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "secondary": [
+        {
+          "name": "last_changes_text",
+          "type": "text",
+          "lbl": {
+            "name": "LBL_LAST_DATE_MODIFIED",
+            "type": "string",
+            "value": "Последняя дата изменения"
+          }
+        },
+        {
+          "name": "last_changes_value",
+          "type": "text",
+          "lbl": {
+            "fromField": "date_modified",
+            "type": "string",
+            "value": "26.12.2022 13:56"
+          }
+        }
+      ],
+      "title_buttons": [
+        {
+          "id": "edit",
+          "lbl": {
+            "type": "empty"
+          },
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/header/Edit.svg",
+          "colorVisualClass": "darkBlue",
+          "sizeVisualClass": "big",
+          "type": "menu_button",
+          "custom_display": true,
+          "intents": [
+            {
+              "intentArea": "DynamicPage",
+              "intentType": "edit",
+              "module": "HRPAC_CANDIDATES",
+              "action": "EditView",
+              "request": {
+                "url": "/index.php?module_name=HRPAC_CANDIDATES&action=getCandidateEditView",
+                "request_params": {
+                  "record": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "vacancies_on_consideration",
+          "lbl": {
+            "name": "LBL_VACANCIES_ON_CONSIDERATION",
+            "type": "string",
+            "value": "Вакансии на рассмотрении"
+          },
+          "icon": "/modules/HRPAC_CANDIDATES/icons/detail/header/MenuLeft.svg",
+          "colorVisualClass": "white",
+          "sizeVisualClass": "big",
+          "type": "customRightPanelButton",
+          "custom_display": true,
+          "intents": [
+            {
+              "intentArea": "RightPanel",
+              "intentType": "list_stages_item",
+              "request": {
+                "url": "/index.php?module=HRPAC_SELECTION_STAGE_CANDIDATES_1&action=get_RightPanel",
+                "request_params": {
+                  "candidate_id": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54",
+                  "content_type": "cand_card"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "bean": {
+    "id": {
+      "name": "id",
+      "vname": "LBL_ID",
+      "type": "id",
+      "required": true,
+      "reportable": true,
+      "comment": "Unique identifier",
+      "inline_edit": false,
+      "search_disabled": true,
+      "value": "8d36a7f4-f7ff-48de-8ed4-63a97d8c8a54"
+    },
+    "name": {
+      "name": "name",
+      "vname": "LBL_NAME",
+      "type": "name",
+      "style_type": [
+        "h1",
+        "noname",
+        "fixed",
+        "right"
+      ],
+      "custom_style": "title",
+      "link": true,
+      "dbType": "varchar",
+      "len": "255",
+      "unified_search": true,
+      "full_text_search": {
+        "boost": 3
+      },
+      "required": false,
+      "importable": "required",
+      "duplicate_merge": "disabled",
+      "merge_filter": "disabled",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "size": "20",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "value": ""
+    },
+    "date_entered": {
+      "name": "date_entered",
+      "vname": "LBL_DATE_ENTERED",
+      "type": "datetime",
+      "group": "created_by_name",
+      "comment": "Date record created",
+      "enable_range_search": true,
+      "options": {
+        "=": "Равно",
+        "not_equal": "Не равно",
+        "greater_than": "После",
+        "less_than": "До",
+        "last_7_days": "Прошедшие 7 дней",
+        "next_7_days": "Следующие 7 дней",
+        "last_30_days": "Прошедшие 30 дней",
+        "next_30_days": "Следующие 30 дней",
+        "last_month": "Прошлый месяц",
+        "this_month": "Этот месяц",
+        "next_month": "Следующий месяц",
+        "last_year": "Прошлый год",
+        "this_year": "Этот год",
+        "next_year": "Следующий год",
+        "between": "Между"
+      },
+      "inline_edit": false,
+      "search_disabled": true,
+      "autocomplete": false,
+      "value": "26.12.2022 13:56"
+    },
+    "date_modified": {
+      "name": "date_modified",
+      "vname": "LBL_DATE_MODIFIED",
+      "type": "datetime",
+      "group": "modified_by_name",
+      "comment": "Date record last modified",
+      "enable_range_search": true,
+      "options": {
+        "=": "Равно",
+        "not_equal": "Не равно",
+        "greater_than": "После",
+        "less_than": "До",
+        "last_7_days": "Прошедшие 7 дней",
+        "next_7_days": "Следующие 7 дней",
+        "last_30_days": "Прошедшие 30 дней",
+        "next_30_days": "Следующие 30 дней",
+        "last_month": "Прошлый месяц",
+        "this_month": "Этот месяц",
+        "next_month": "Следующий месяц",
+        "last_year": "Прошлый год",
+        "this_year": "Этот год",
+        "next_year": "Следующий год",
+        "between": "Между"
+      },
+      "inline_edit": false,
+      "search_disabled": true,
+      "autocomplete": false,
+      "value": "26.12.2022 13:56"
+    },
+    "modified_user_id": {
+      "name": "modified_user_id",
+      "rname": "user_name",
+      "id_name": "modified_user_id",
+      "vname": "LBL_MODIFIED",
+      "type": "assigned_user_name",
+      "table": "users",
+      "isnull": "false",
+      "group": "modified_by_name",
+      "dbType": "id",
+      "reportable": true,
+      "comment": "User who last modified record",
+      "massupdate": false,
+      "inline_edit": false,
+      "search_disabled": true,
+      "value": "1"
+    },
+    "modified_by_name": {
+      "name": "modified_by_name",
+      "vname": "LBL_MODIFIED_NAME",
+      "type": "relate",
+      "reportable": false,
+      "source": "non-db",
+      "rname": "user_name",
+      "table": "users",
+      "id_name": "modified_user_id",
+      "module": "Users",
+      "link": "modified_user_link",
+      "duplicate_merge": "disabled",
+      "massupdate": false,
+      "inline_edit": false,
+      "search_disabled": true,
+      "value": "Administrator Admin",
+      "visual_value": {
+        "id": "1",
+        "name": "Administrator Admin"
+      }
+    },
+    "created_by": {
+      "name": "created_by",
+      "rname": "user_name",
+      "id_name": "modified_user_id",
+      "vname": "LBL_CREATED",
+      "type": "assigned_user_name",
+      "table": "users",
+      "isnull": "false",
+      "dbType": "id",
+      "group": "created_by_name",
+      "comment": "User who created record",
+      "massupdate": false,
+      "inline_edit": false,
+      "search_disabled": true,
+      "studio": {
+        "listview": true
+      },
+      "value": "1"
+    },
+    "created_by_name": {
+      "name": "created_by_name",
+      "vname": "LBL_CREATED_BY_NAME",
+      "type": "relate",
+      "reportable": false,
+      "link": "created_by_link",
+      "rname": "user_name",
+      "source": "non-db",
+      "table": "users",
+      "id_name": "created_by",
+      "module": "Users",
+      "duplicate_merge": "disabled",
+      "importable": "false",
+      "massupdate": false,
+      "inline_edit": false,
+      "db_concat_fields": [
+        "first_name",
+        "last_name"
+      ],
+      "editable": true,
+      "value": "Administrator Admin",
+      "visual_value": {
+        "id": "1",
+        "name": "Administrator Admin"
+      }
+    },
+    "description": {
+      "name": "description",
+      "vname": "LBL_DESCRIPTION",
+      "type": "text",
+      "comment": "Full text of the note",
+      "rows": 6,
+      "cols": 80,
+      "search_disabled": true,
+      "value": ""
+    },
+    "deleted": {
+      "name": "deleted",
+      "vname": "LBL_DELETED",
+      "type": "bool",
+      "default": "0",
+      "reportable": false,
+      "comment": "Record deletion indicator",
+      "search_disabled": true,
+      "value": "0"
+    },
+    "save_trigger": {
+      "name": "save_trigger",
+      "type": "bool",
+      "vname": "LBL_SAVE_TRIGGER",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "studio": "visible",
+      "required": false,
+      "aow": "show",
+      "value": ""
+    },
+    "event_trigger": {
+      "name": "event_trigger",
+      "vname": "LBL_EVENT_TRIGGER",
+      "type": "varchar",
+      "len": "100",
+      "size": "20",
+      "audited": false,
+      "inline_edit": false,
+      "unified_search": false,
+      "source": "non-db",
+      "required": false,
+      "massupdate": false,
+      "aow": "show",
+      "value": ""
+    },
+    "event_trigger_id_one": {
+      "name": "event_trigger_id_one",
+      "vname": "LBL_EVENT_TRIGGER_ID_ONE",
+      "type": "id",
+      "audited": false,
+      "inline_edit": false,
+      "unified_search": false,
+      "source": "non-db",
+      "required": false,
+      "massupdate": false,
+      "aow": "show",
+      "value": ""
+    },
+    "event_trigger_id_two": {
+      "name": "event_trigger_id_two",
+      "vname": "LBL_EVENT_TRIGGER_ID_TWO",
+      "type": "id",
+      "audited": false,
+      "inline_edit": false,
+      "unified_search": false,
+      "source": "non-db",
+      "required": false,
+      "massupdate": false,
+      "aow": "show",
+      "value": ""
+    },
+    "text_trigger": {
+      "name": "text_trigger",
+      "vname": "LBL_TEXT_TRIGGER",
+      "type": "varchar",
+      "len": "100",
+      "size": "20",
+      "audited": false,
+      "inline_edit": false,
+      "unified_search": false,
+      "source": "non-db",
+      "required": false,
+      "massupdate": false,
+      "aow": "show",
+      "value": ""
+    },
+    "datetime_trigger": {
+      "name": "datetime_trigger",
+      "vname": "LBL_DATETIME_TRIGGER",
+      "type": "datetime",
+      "len": "100",
+      "size": "20",
+      "audited": false,
+      "inline_edit": false,
+      "unified_search": false,
+      "source": "non-db",
+      "required": false,
+      "massupdate": false,
+      "aow": "show",
+      "value": ""
+    },
+    "date_trigger": {
+      "name": "date_trigger",
+      "vname": "LBL_DATE_TRIGGER",
+      "type": "date",
+      "len": "100",
+      "size": "20",
+      "audited": false,
+      "inline_edit": false,
+      "unified_search": false,
+      "source": "non-db",
+      "required": false,
+      "massupdate": false,
+      "aow": "show",
+      "value": ""
+    },
+    "created_by_link": {
+      "name": "created_by_link",
+      "type": "link",
+      "relationship": "hrpac_candidates_created_by",
+      "vname": "LBL_CREATED_USER",
+      "link_type": "one",
+      "module": "Users",
+      "bean_name": "User",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "modified_user_link": {
+      "name": "modified_user_link",
+      "type": "link",
+      "relationship": "hrpac_candidates_modified_user",
+      "vname": "LBL_MODIFIED_USER",
+      "link_type": "one",
+      "module": "Users",
+      "bean_name": "User",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "assigned_user_id": {
+      "name": "assigned_user_id",
+      "rname": "user_name",
+      "id_name": "assigned_user_id",
+      "vname": "LBL_ASSIGNED_TO_ID",
+      "group": "assigned_user_name",
+      "type": "relate",
+      "table": "users",
+      "module": "Users",
+      "reportable": true,
+      "isnull": "false",
+      "dbType": "id",
+      "audited": true,
+      "comment": "User ID assigned to record",
+      "duplicate_merge": "disabled",
+      "search_disabled": true,
+      "value": "",
+      "visual_value": {
+        "id": "",
+        "name": ""
+      }
+    },
+    "assigned_user_name": {
+      "name": "assigned_user_name",
+      "link": "assigned_user_link",
+      "vname": "LBL_ASSIGNED_TO_NAME",
+      "rname": "user_name",
+      "type": "relate",
+      "reportable": false,
+      "source": "non-db",
+      "table": "users",
+      "id_name": "assigned_user_id",
+      "module": "Users",
+      "duplicate_merge": "disabled",
+      "search_disabled": true,
+      "value": "",
+      "visual_value": {
+        "id": "",
+        "name": ""
+      }
+    },
+    "assigned_user_link": {
+      "name": "assigned_user_link",
+      "type": "link",
+      "relationship": "hrpac_candidates_assigned_user",
+      "vname": "LBL_ASSIGNED_TO_USER",
+      "link_type": "one",
+      "module": "Users",
+      "bean_name": "User",
+      "source": "non-db",
+      "duplicate_merge": "enabled",
+      "rname": "user_name",
+      "id_name": "assigned_user_id",
+      "table": "users",
+      "search_disabled": true,
+      "value": ""
+    },
+    "SecurityGroups": {
+      "name": "SecurityGroups",
+      "type": "link",
+      "relationship": "securitygroups_hrpac_candidates",
+      "module": "SecurityGroups",
+      "bean_name": "SecurityGroup",
+      "source": "non-db",
+      "vname": "LBL_SECURITYGROUPS",
+      "search_disabled": true,
+      "value": ""
+    },
+    "last_name": {
+      "required": false,
+      "name": "last_name",
+      "vname": "LBL_LAST_NAME",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Фамилия кандидата",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": true,
+      "merge_filter": "disabled",
+      "query_type": "",
+      "len": "100",
+      "size": "20",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "first_name": {
+      "required": true,
+      "name": "first_name",
+      "vname": "LBL_FIRST_NAME",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Имя кандидата",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": true,
+      "merge_filter": "disabled",
+      "len": "100",
+      "size": "20",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "middle_name": {
+      "required": false,
+      "name": "middle_name",
+      "vname": "LBL_MIDDLE_NAME",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Отчество кандидата",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": true,
+      "merge_filter": "disabled",
+      "len": "100",
+      "size": "20",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "birth_date": {
+      "required": false,
+      "name": "birth_date",
+      "vname": "LBL_BIRTH_DATE",
+      "type": "date",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Дата рождения кандидата",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "enable_range_search": false,
+      "search_disabled": true,
+      "value": ""
+    },
+    "age": {
+      "name": "age",
+      "required": false,
+      "vname": "LBL_AGE",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "3",
+      "size": "20",
+      "source": "non-db",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "gender": {
+      "required": false,
+      "name": "gender",
+      "vname": "LBL_GENDER",
+      "type": "enum",
+      "massupdate": 0,
+      "default": "MALE",
+      "no_default": false,
+      "comments": "Пол кандидата",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 100,
+      "size": "20",
+      "options": {
+        "MALE": "Мужской",
+        "FEMALE": "Женский"
+      },
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "dependency": false,
+      "autocomplete": false,
+      "value": "MALE"
+    },
+    "hrpac_cities_id_c": {
+      "required": false,
+      "name": "hrpac_cities_id_c",
+      "vname": "LBL_LOCATION_ID_HRPAC_CITIES_ID",
+      "type": "id",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": 0,
+      "audited": false,
+      "inline_edit": true,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 36,
+      "size": "20",
+      "search_disabled": true,
+      "value": ""
+    },
+    "location_id": {
+      "required": false,
+      "source": "non-db",
+      "name": "location_id",
+      "vname": "LBL_LOCATION_ID",
+      "type": "relate",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Местоположение",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "255",
+      "size": "20",
+      "id_name": "hrpac_cities_id_c",
+      "ext2": "HRPAC_CITIES",
+      "module": "HRPAC_CITIES",
+      "rname": "name",
+      "quicksearch": "enabled",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "table_option": {
+        "table": "hrpac_cities",
+        "fields_in_table": {
+          "0": "id",
+          "name": [
+            "name"
+          ]
+        }
+      },
+      "value": "",
+      "visual_value": {
+        "id": "",
+        "name": ""
+      }
+    },
+    "hrpac_selection_stage_id_c": {
+      "required": false,
+      "name": "hrpac_selection_stage_id_c",
+      "vname": "LBL_SELECTION_STAGE_ID_HRPAC_SELECTION_STAGE_ID_C",
+      "type": "id",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Для поиска по этапу подбора необходимо выбрать вакансию,по которой будет осуществляться поиск",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": 0,
+      "audited": false,
+      "inline_edit": true,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 36,
+      "size": "20",
+      "search_disabled": true,
+      "value": ""
+    },
+    "photo": {
+      "required": false,
+      "name": "photo",
+      "vname": "LBL_PHOTO",
+      "style_type": [
+        "fixed",
+        "right"
+      ],
+      "custom_style": "avatar",
+      "type": "image",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Фотография кандидата",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": 0,
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 255,
+      "limit": 1,
+      "size": "20",
+      "dbType": "varchar",
+      "border": "",
+      "width": "200",
+      "height": "200",
+      "actions": {
+        "link": "/index.php?entryPoint=download&id=${this.id}_photo&type=HRPAC_CANDIDATES",
+        "delete": "index.php?module=${this.module}&record=${this.id}&entryPoint=deleteAttachment&field=photo&id=${this.id}_photo&type=${this.module}&photo_record_id=${this.id}"
+      },
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "salary": {
+      "required": false,
+      "name": "salary",
+      "vname": "LBL_SALARY",
+      "type": "currency",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 26,
+      "size": "20",
+      "enable_range_search": false,
+      "precision": 6,
+      "search_disabled": true,
+      "value": ""
+    },
+    "currency_id": {
+      "required": false,
+      "name": "currency_id",
+      "vname": "LBL_CURRENCY",
+      "type": "currency_id",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "default": "-99",
+      "placeholder": "Валюта",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": 0,
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 36,
+      "size": "20",
+      "dbType": "id",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "function": {
+        "name": "getCurrencyDropDown",
+        "returns": "html"
+      },
+      "search_disabled": true,
+      "value": "<select name=\"currency_id\" id=\"currency_id_select\" onchange=\"CurrencyConvertAll(this.form);\"><option value=\"-99\" selected>Рубли РФ : ₽<option value=\"5b20f40f-df59-1388-6006-5d8bd555af10\">Доллар США : $<option value=\"c0e65035-444d-cabd-b65a-5d8bd4bd1eb3\">Евро : €</select><script>var ConversionRates = new Array(); \nvar CurrencySymbols = new Array(); \nvar lastRate = \"1\"; ConversionRates['-99'] = '1';\n CurrencySymbols['-99'] = '₽';\n ConversionRates['5b20f40f-df59-1388-6006-5d8bd555af10'] = '67.86';\n CurrencySymbols['5b20f40f-df59-1388-6006-5d8bd555af10'] = '$';\n ConversionRates['c0e65035-444d-cabd-b65a-5d8bd4bd1eb3'] = '76.81';\n CurrencySymbols['c0e65035-444d-cabd-b65a-5d8bd4bd1eb3'] = '€';\nvar currencyFields = [\"salary\"];\n\t\t\t\t\tfunction get_rate(id){\n\t\t\t\t\t\treturn ConversionRates[id];\n\t\t\t\t\t}\n\t\t\t\t\tfunction ConvertToDollar(amount, rate){\n\t\t\t\t\t\treturn amount / rate;\n\t\t\t\t\t}\n\t\t\t\t\tfunction ConvertFromDollar(amount, rate){\n\t\t\t\t\t\treturn amount * rate;\n\t\t\t\t\t}\n\t\t\t\t\tfunction ConvertRate(id,fields){\n\t\t\t\t\t\t\tfor(var i = 0; i < fields.length; i++){\n\t\t\t\t\t\t\t\tfields[i].value = toDecimal(ConvertFromDollar(toDecimal(ConvertToDollar(toDecimal(fields[i].value), lastRate)), ConversionRates[id]));\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlastRate = ConversionRates[id];\n\t\t\t\t\t\t}\n\t\t\t\t\tfunction ConvertRateSingle(id,field){\n\t\t\t\t\t\tvar temp = field.innerHTML.substring(1, field.innerHTML.length);\n\t\t\t\t\t\tunformattedNumber = unformatNumber(temp, num_grp_sep, dec_sep);\n\t\t\t\t\t\t\n\t\t\t\t\t\tfield.innerHTML = CurrencySymbols[id] + formatNumber(toDecimal(ConvertFromDollar(ConvertToDollar(unformattedNumber, lastRate), ConversionRates[id])), num_grp_sep, dec_sep, 2, 2);\n\t\t\t\t\t\tlastRate = ConversionRates[id];\n\t\t\t\t\t}\n\t\t\t\t\tfunction CurrencyConvertAll(form){\n                        try {\n                        var id = form.currency_id.options[form.currency_id.selectedIndex].value;\n\t\t\t\t\t\tvar fields = new Array();\n\t\t\t\t\t\t\n\t\t\t\t\t\tfor(i in currencyFields){\n\t\t\t\t\t\t\tvar field = currencyFields[i];\n\t\t\t\t\t\t\tif(typeof(form[field]) != 'undefined'){\n\t\t\t\t\t\t\t\tform[field].value = unformatNumber(form[field].value, num_grp_sep, dec_sep);\n\t\t\t\t\t\t\t\tfields.push(form[field]);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tConvertRate(id, fields);\n\t\t\t\t\t\tfor(i in fields){\n\t\t\t\t\t\t\tfields[i].value = formatNumber(fields[i].value, num_grp_sep, dec_sep);\n\n\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t} catch (err) {\n                            // Do nothing, if we can't find the currency_id field we will just not attempt to convert currencies\n                            // This typically only happens in lead conversion and quick creates, where the currency_id field may be named somethnig else or hidden deep inside a sub-form.\n                        }\n\t\t\t\t\t\t\n\t\t\t\t\t}\n\t\t\t\t</script>",
+      "symbol": "₽"
+    },
+    "income_type": {
+      "name": "income_type",
+      "vname": "LBL_INCOME_TYPE",
+      "required": false,
+      "type": "enum",
+      "massupdate": 0,
+      "no_default": false,
+      "default": "empty",
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 100,
+      "size": "20",
+      "options": {
+        "empty": "Не выбрано",
+        "gross": "gross",
+        "net": "net"
+      },
+      "studio": "visible",
+      "dependency": false,
+      "search_disabled": true,
+      "autocomplete": false,
+      "value": "empty"
+    },
+    "last_work": {
+      "required": false,
+      "name": "last_work",
+      "vname": "LBL_LAST_WORK",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "200",
+      "size": "20",
+      "editable": true,
+      "value": ""
+    },
+    "last_post": {
+      "required": false,
+      "name": "last_post",
+      "vname": "LBL_LAST_POST",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "200",
+      "size": "20",
+      "editable": true,
+      "value": ""
+    },
+    "experience": {
+      "required": false,
+      "name": "experience",
+      "vname": "LBL_EXPERIENCE",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "40",
+      "size": "20",
+      "editable": true,
+      "search_disabled": true,
+      "value": ""
+    },
+    "resume_date_upd": {
+      "required": false,
+      "name": "resume_date_upd",
+      "vname": "LBL_RESUME_DATE_UPD",
+      "type": "datetimecombo",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "enable_range_search": false,
+      "dbType": "datetime",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "resume_text": {
+      "required": false,
+      "name": "resume_text",
+      "vname": "LBL_RESUME_TEXT",
+      "type": "wysiwyg",
+      "dbType": "longtext",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "rows": "8",
+      "cols": "80",
+      "search_disabled": true,
+      "value": ""
+    },
+    "candidate_resume_text_id": {
+      "required": false,
+      "name": "candidate_resume_text_id",
+      "vname": "LBL_RESUME_TEXT_ID",
+      "type": "id",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": 0,
+      "audited": false,
+      "inline_edit": true,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 36,
+      "size": "20",
+      "search_disabled": true,
+      "value": "8eb81047-b62b-7c3c-196c-63a97dfb8ac6"
+    },
+    "hrpac_sources_id_c": {
+      "required": false,
+      "name": "hrpac_sources_id_c",
+      "vname": "LBL_RESUME_SOURCE_ID_HRPAC_SOURCES_ID",
+      "type": "id",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": 0,
+      "audited": false,
+      "inline_edit": true,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 36,
+      "size": "20",
+      "search_disabled": true,
+      "value": ""
+    },
+    "resume_source_id": {
+      "required": true,
+      "source": "non-db",
+      "name": "resume_source_id",
+      "vname": "LBL_RESUME_SOURCE",
+      "type": "relate",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "255",
+      "size": "20",
+      "id_name": "hrpac_sources_id_c",
+      "ext2": "HRPAC_SOURCES",
+      "module": "HRPAC_SOURCES",
+      "rname": "name",
+      "quicksearch": "enabled",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "table_option": {
+        "table": "hrpac_sources",
+        "fields_in_table": {
+          "0": "id",
+          "name": [
+            "name"
+          ]
+        }
+      },
+      "search_disabled": true,
+      "value": "",
+      "visual_value": {
+        "id": "",
+        "name": ""
+      }
+    },
+    "resume_url": {
+      "required": false,
+      "name": "resume_url",
+      "vname": "LBL_RESUME_URL",
+      "type": "url",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "500",
+      "size": "20",
+      "link_target": "_blank",
+      "search_disabled": true,
+      "value": ""
+    },
+    "self_response": {
+      "required": false,
+      "name": "self_response",
+      "vname": "LBL_SELF_RESPONSE",
+      "type": "bool",
+      "massupdate": 0,
+      "default": "0",
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "255",
+      "size": "20",
+      "search_disabled": true,
+      "value": "0"
+    },
+    "open_resume_fulltext": {
+      "name": "open_resume_fulltext",
+      "vname": "LBL_OPEN_RESUME_FULLTEXT",
+      "source": "non-db",
+      "type": "button",
+      "style_type": [
+        "fixed",
+        "right"
+      ],
+      "value": ""
+    },
+    "specialty": {
+      "name": "specialty",
+      "vname": "LBL_SPECIALTY",
+      "type": "varchar",
+      "len": "200",
+      "unified_search": false,
+      "required": false,
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "merge_filter": "disabled",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Специальность/Желаемая должность",
+      "help": "",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "size": "100",
+      "editable": true,
+      "search_disabled": true,
+      "value": ""
+    },
+    "talantix_id": {
+      "name": "talantix_id",
+      "vname": "LBL_TALANTIX_ID",
+      "type": "varchar",
+      "unified_search": false,
+      "full_text_search": {
+        "boost": 3
+      },
+      "merge_filter": "selected",
+      "len": 36,
+      "size": "20",
+      "required": false,
+      "search_disabled": true,
+      "value": ""
+    },
+    "candidates_number": {
+      "name": "candidates_number",
+      "vname": "LBL_NUMBER",
+      "type": "int",
+      "len": 11,
+      "required": true,
+      "unified_search": true,
+      "full_text_search": {
+        "boost": 3
+      },
+      "comment": "Visual unique identifier",
+      "duplicate_merge": "disabled",
+      "disable_num_format": true,
+      "studio": {
+        "quickcreate": false,
+        "listview": true,
+        "popuplist": false
+      },
+      "inline_edit": false,
+      "search_disabled": true,
+      "value": "70"
+    },
+    "communications": {
+      "name": "communications",
+      "type": "MeansCommunication",
+      "vname": "LBL_COMMUNICATIONS",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "dbType": "text",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "required": true,
+      "search_disabled": true,
+      "value": [],
+      "option": {
+        "value_type_list": {
+          "phone": "Телефон",
+          "email": "E-Mail",
+          "skype": "Skype",
+          "telegram": "Telegram",
+          "facebook": "Facebook",
+          "habr": "Хабр.Карьера",
+          "linkedin": "LinkedIn",
+          "vkontakte": "Вконтакте",
+          "instagram": "Instagram",
+          "site": "Сайт",
+          "freelance": "Freelance",
+          "icq": "ICQ",
+          "livejournal": "LiveJournal",
+          "moi_krug": "Мой Круг"
+        }
+      }
+    },
+    "means_of_communication_link": {
+      "name": "means_of_communication_link",
+      "vname": "LBL_COMMUNICATIONS",
+      "type": "link",
+      "relationship": "hrpac_candidates_means_of_communication_link",
+      "module": "Means_of_Communication",
+      "bean_name": "Means_of_Communication",
+      "source": "non-db",
+      "link_reportable": true,
+      "search_disabled": true,
+      "value": ""
+    },
+    "main_email": {
+      "name": "main_email",
+      "type": "email",
+      "vname": "LBL_MAIN_EMAIL",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "check_availability": "communications",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "required": true,
+      "aow": "show",
+      "value": ""
+    },
+    "main_phone": {
+      "name": "main_phone",
+      "type": "phone",
+      "vname": "LBL_MAIN_PHONE",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "check_availability": "communications",
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "value": ""
+    },
+    "communications_serch": {
+      "name": "communications_serch",
+      "required": false,
+      "vname": "LBL_COMMUNICATIONS",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "100",
+      "size": "20",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "experience_rs": {
+      "name": "experience_rs",
+      "vname": "LBL_EXPERIENCE",
+      "type": "link",
+      "relationship": "hrpac_candidates_experiences",
+      "module": "HRPAC_CANDIDATES_JOBS",
+      "bean_name": "HRPAC_CANDIDATES_JOBS",
+      "source": "non-db",
+      "link_reportable": true,
+      "search_disabled": true,
+      "value": {
+        "relationship": {
+          "type": "one-to-many",
+          "def": {
+            "name": "hrpac_candidates_experiences",
+            "lhs_label": "Кандидаты",
+            "lhs_module": "HRPAC_CANDIDATES",
+            "lhs_table": "hrpac_candidates",
+            "lhs_key": "id",
+            "rhs_label": "Опыт работы кандидатов",
+            "rhs_module": "HRPAC_CANDIDATES_JOBS",
+            "rhs_table": "hrpac_candidates_jobs",
+            "rhs_key": "candidat_id",
+            "relationship_type": "one-to-many"
+          },
+          "name": "hrpac_candidates_experiences",
+          "selfReferencing": false,
+          "lhsLinkDef": {
+            "name": "experience_rs",
+            "vname": "LBL_EXPERIENCE",
+            "type": "link",
+            "relationship": "hrpac_candidates_experiences",
+            "module": "HRPAC_CANDIDATES_JOBS",
+            "bean_name": "HRPAC_CANDIDATES_JOBS",
+            "source": "non-db",
+            "link_reportable": true,
+            "search_disabled": true
+          },
+          "rhsLinkDef": false
+        }
+      }
+    },
+    "skills_training_rs": {
+      "name": "skills_training_rs",
+      "vname": "LBL_SKILLS_TRAINING",
+      "type": "link",
+      "relationship": "hrpac_candidates_skills_training",
+      "module": "HRPAC_SKILLS_TRAINING",
+      "bean_name": "HRPAC_SKILLS_TRAINING",
+      "source": "non-db",
+      "link_reportable": true,
+      "search_disabled": true,
+      "value": {
+        "relationship": {
+          "type": "one-to-many",
+          "def": {
+            "name": "hrpac_candidates_skills_training",
+            "lhs_label": "Кандидаты",
+            "lhs_module": "HRPAC_CANDIDATES",
+            "lhs_table": "hrpac_candidates",
+            "lhs_key": "id",
+            "rhs_label": "Повышение квалификации",
+            "rhs_module": "HRPAC_SKILLS_TRAINING",
+            "rhs_table": "hrpac_skills_training",
+            "rhs_key": "candidate_id",
+            "relationship_type": "one-to-many"
+          },
+          "name": "hrpac_candidates_skills_training",
+          "selfReferencing": false,
+          "lhsLinkDef": {
+            "name": "skills_training_rs",
+            "vname": "LBL_SKILLS_TRAINING",
+            "type": "link",
+            "relationship": "hrpac_candidates_skills_training",
+            "module": "HRPAC_SKILLS_TRAINING",
+            "bean_name": "HRPAC_SKILLS_TRAINING",
+            "source": "non-db",
+            "link_reportable": true,
+            "search_disabled": true
+          },
+          "rhsLinkDef": false
+        }
+      }
+    },
+    "education_rs": {
+      "name": "education_rs",
+      "vname": "LBL_EDUCATION",
+      "type": "link",
+      "relationship": "hrpac_candidates_education",
+      "module": "HRPAC_EDUCATION",
+      "bean_name": "HRPAC_EDUCATION",
+      "source": "non-db",
+      "link_reportable": true,
+      "search_disabled": true,
+      "value": ""
+    },
+    "candidates_jobs": {
+      "name": "candidates_jobs",
+      "type": "HRPAC_CANDIDATES_JOBS",
+      "vname": "LBL_EXPERIENCE",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": []
+    },
+    "last_comments": {
+      "name": "last_comments",
+      "vname": "LBL_LAST_COMMENTS",
+      "type": "text",
+      "last_comments": "1",
+      "source": "non-db",
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "value": ""
+    },
+    "salary_min": {
+      "name": "salary_min",
+      "required": false,
+      "vname": "LBL_SALARY_MIN",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "100",
+      "size": "20",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "salary_max": {
+      "name": "salary_max",
+      "required": false,
+      "vname": "LBL_SALARY_MAX",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "100",
+      "size": "20",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "age_min": {
+      "name": "age_min",
+      "required": false,
+      "vname": "LBL_AGE_MIN",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "100",
+      "size": "20",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "age_max": {
+      "name": "age_max",
+      "required": false,
+      "vname": "LBL_AGE_MAX",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "100",
+      "size": "20",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "ssc": {
+      "name": "ssc",
+      "vname": "LBL_SSC",
+      "type": "link",
+      "relationship": "candidates_ssc",
+      "module": "HRPAC_SELECTION_STAGE_CANDIDATES_1",
+      "bean_name": "HRPAC_SELECTION_STAGE_CANDIDATES_1",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "bot_auditory": {
+      "name": "bot_auditory",
+      "type": "link",
+      "relationship": "hrpaccandidates_botmailings",
+      "source": "non-db",
+      "module": "BOT_AUDITORY",
+      "bean_name": "BOT_AUDITORY",
+      "vname": "LBL_BOT_AUDITORY",
+      "search_disabled": true,
+      "value": ""
+    },
+    "tags_ids": {
+      "name": "tags_ids",
+      "vname": "LBL_HRPAC_TAGS",
+      "type": "rellink",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "link": "hrpac_candidates_hrpack_tags",
+      "table": "hrpac_tags",
+      "fields_in_table": [
+        "id",
+        "name",
+        "my_tag"
+      ],
+      "detail_format": [
+        "name"
+      ],
+      "table_option": {
+        "table": "hrpac_tags",
+        "fields_in_table": {
+          "0": "id",
+          "1": "my_tag",
+          "name": [
+            "name"
+          ]
+        }
+      },
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "rellink_child": "tags_ids_val",
+      "fill_visual_value": true,
+      "option_url": "index.php?module=HRPAC_CANDIDATES&to_pdf=true&action=get_rel_fields_values&iteration=0&field=tags_ids&search_string=",
+      "visual_value": [],
+      "search_disabled": true,
+      "value": []
+    },
+    "tags_ids_val": {
+      "name": "tags_ids_val",
+      "vname": "LBL_TAGS_IDS_VAL",
+      "type": "text",
+      "comment": "",
+      "rows": "6",
+      "cols": "80",
+      "required": false,
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "studio": {
+        "listview": false,
+        "popuplist": false,
+        "editview": false,
+        "detailview": false
+      },
+      "rellink_parent": "tags_ids",
+      "search_disabled": true,
+      "value": ""
+    },
+    "comments": {
+      "name": "comments",
+      "vname": "LBL_COMMENTS",
+      "type": "link",
+      "relationship": "hrpac_candidates_hrpac_comments_1",
+      "module": "HRPAC_COMMENTS",
+      "bean_name": "HRPAC_COMMENTS",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "emails": {
+      "name": "emails",
+      "vname": "LBL_CORRESPONDENCE",
+      "type": "link",
+      "relationship": "hrpac_candidates_emails",
+      "module": "Emails",
+      "bean_name": "Email",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "botcommunication": {
+      "name": "botcommunication",
+      "vname": "LBL_CORRESPONDENCE",
+      "type": "link",
+      "relationship": "candidates_botcommunication",
+      "module": "BOT_COMMUNICATION",
+      "bean_name": "BOT_COMMUNICATION",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "telegrammessages": {
+      "name": "telegrammessages",
+      "vname": "LBL_TELEGRAM_MESSAGES",
+      "type": "link",
+      "relationship": "candidates_telegrammessages",
+      "module": "HRPAC_TELEGRAM_MESSAGES",
+      "bean_name": "HRPAC_TELEGRAM_MESSAGES",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_vacancy_id_c": {
+      "required": false,
+      "name": "hrpac_vacancy_id_c",
+      "vname": "LBL_VACANCY_HRPAC_VACANCY_ID",
+      "type": "id",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "использовано для фильтров по вакансии",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": 0,
+      "audited": false,
+      "inline_edit": true,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 36,
+      "size": "20",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "salary_group": {
+      "required": false,
+      "name": "salary_group",
+      "vname": "LBL_SALARY_WAIT",
+      "type": "group",
+      "style_type": [
+        "fixed",
+        "right"
+      ],
+      "fields_arr": [
+        "salary",
+        "currency_id",
+        "income_type"
+      ],
+      "source": "non-db",
+      "editable": true,
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_skills_hrpac_candidates": {
+      "name": "hrpac_skills_hrpac_candidates",
+      "type": "link",
+      "relationship": "hrpac_skills_hrpac_candidates",
+      "source": "non-db",
+      "module": "HRPAC_SKILLS",
+      "bean_name": "HRPAC_SKILLS",
+      "vname": "LBL_HRPAC_SKILLS_HRPAC_CANDIDATES_FROM_HRPAC_SKILLS_TITLE",
+      "search_disabled": true,
+      "value": {
+        "relationship": {
+          "type": "many-to-many",
+          "def": {
+            "name": "hrpac_skills_hrpac_candidates",
+            "true_relationship_type": "many-to-many",
+            "from_studio": true,
+            "relationships": {
+              "hrpac_skills_hrpac_candidates": {
+                "lhs_module": "HRPAC_SKILLS",
+                "lhs_table": "hrpac_skills",
+                "lhs_key": "id",
+                "rhs_module": "HRPAC_CANDIDATES",
+                "rhs_table": "hrpac_candidates",
+                "rhs_key": "id",
+                "relationship_type": "many-to-many",
+                "join_table": "hrpac_skills_hrpac_candidates",
+                "join_key_lhs": "skill_id",
+                "join_key_rhs": "candidat_id"
+              }
+            },
+            "table": "hrpac_skills_hrpac_candidates",
+            "fields": [
+              {
+                "name": "id",
+                "type": "varchar",
+                "len": 36
+              },
+              {
+                "name": "date_modified",
+                "type": "datetime"
+              },
+              {
+                "name": "deleted",
+                "type": "bool",
+                "len": "1",
+                "default": "0",
+                "required": true
+              },
+              {
+                "name": "skill_id",
+                "type": "varchar",
+                "len": 36
+              },
+              {
+                "name": "candidat_id",
+                "type": "varchar",
+                "len": 36
+              }
+            ],
+            "indices": [
+              {
+                "name": "hrpac_skills_hrpac_candidates_spk",
+                "type": "primary",
+                "fields": [
+                  "id"
+                ]
+              },
+              {
+                "name": "hrpac_skills_hrpac_candidates_alt",
+                "type": "alternate_key",
+                "fields": [
+                  "skill_id",
+                  "candidat_id"
+                ]
+              },
+              {
+                "name": "candidat_id",
+                "type": "alternate_key",
+                "fields": [
+                  "candidat_id"
+                ]
+              }
+            ],
+            "lhs_module": "HRPAC_SKILLS",
+            "lhs_table": "hrpac_skills",
+            "lhs_key": "id",
+            "rhs_module": "HRPAC_CANDIDATES",
+            "rhs_table": "hrpac_candidates",
+            "rhs_key": "id",
+            "relationship_type": "many-to-many",
+            "join_table": "hrpac_skills_hrpac_candidates",
+            "join_key_lhs": "skill_id",
+            "join_key_rhs": "candidat_id"
+          },
+          "name": "hrpac_skills_hrpac_candidates",
+          "lhsLinkDef": {
+            "name": "hrpac_skills_hrpac_candidates",
+            "type": "link",
+            "relationship": "hrpac_skills_hrpac_candidates",
+            "source": "non-db",
+            "module": "HRPAC_CANDIDATES",
+            "bean_name": "HRPAC_CANDIDATES",
+            "vname": "LBL_HRPAC_SKILLS_HRPAC_CANDIDATES_FROM_HRPAC_CANDIDATES_TITLE",
+            "sub_type": "invalidation_cache_rellink"
+          },
+          "rhsLinkDef": {
+            "name": "hrpac_skills_hrpac_candidates",
+            "type": "link",
+            "relationship": "hrpac_skills_hrpac_candidates",
+            "source": "non-db",
+            "module": "HRPAC_SKILLS",
+            "bean_name": "HRPAC_SKILLS",
+            "vname": "LBL_HRPAC_SKILLS_HRPAC_CANDIDATES_FROM_HRPAC_SKILLS_TITLE",
+            "search_disabled": true
+          }
+        }
+      }
+    },
+    "skills_ids": {
+      "name": "skills_ids",
+      "vname": "LBL_HRPAC_SKILLS_HRPAC_CANDIDATES",
+      "type": "rellink",
+      "front_field_type": "stack",
+      "required": false,
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "(не более 50)",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "link": "hrpac_skills_hrpac_candidates",
+      "readonly": true,
+      "multiple": true,
+      "multiple-limit": 50,
+      "table": "hrpac_skills",
+      "icon_help": "el-icon-question",
+      "fields_in_table": [
+        "id",
+        "name"
+      ],
+      "detail_format": [
+        "name"
+      ],
+      "table_option": {
+        "table": "hrpac_skills",
+        "fields_in_table": {
+          "0": "id",
+          "name": [
+            "name"
+          ]
+        }
+      },
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "rellink_child": "skills_ids_val",
+      "fill_visual_value": true,
+      "option_url": "index.php?module=HRPAC_CANDIDATES&to_pdf=true&action=get_rel_fields_values&iteration=0&field=skills_ids&search_string=",
+      "visual_value": [],
+      "search_disabled": true,
+      "value": []
+    },
+    "skills_ids_val": {
+      "name": "skills_ids_val",
+      "vname": "LBL_SKILLS_IDS_VAL",
+      "type": "text",
+      "comment": "",
+      "rows": "6",
+      "cols": "80",
+      "required": false,
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "studio": {
+        "listview": false,
+        "popuplist": false,
+        "editview": false,
+        "detailview": false
+      },
+      "rellink_parent": "skills_ids",
+      "search_disabled": true,
+      "value": ""
+    },
+    "resume_format": {
+      "name": "resume_format",
+      "vname": "LBL_RESUME_FORMAT",
+      "type": "enum",
+      "source": "non-db",
+      "options": {
+        "pdf": "pdf",
+        "docx": "docx"
+      },
+      "default": "pdf",
+      "autocomplete": false,
+      "value": ""
+    },
+    "resume_template": {
+      "name": "resume_template",
+      "vname": "LBL_RESUME_TEMPLATE",
+      "type": "relate",
+      "source": "non-db",
+      "table_option": {
+        "table": "aos_pdf_templates",
+        "fields_in_table": {
+          "0": "id",
+          "name": [
+            "name"
+          ]
+        }
+      },
+      "sql_list_filter": " type = 'HRPAC_CANDIDATES' ",
+      "value": "",
+      "visual_value": {
+        "id": null,
+        "name": ""
+      }
+    },
+    "corporate_email": {
+      "name": "corporate_email",
+      "required": true,
+      "vname": "LBL_CORPORATE_EMAIL",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidates_documents_1": {
+      "name": "hrpac_candidates_documents_1",
+      "type": "link",
+      "relationship": "hrpac_candidates_documents_1",
+      "source": "non-db",
+      "module": "Documents",
+      "bean_name": "Document",
+      "vname": "LBL_HRPAC_CANDIDATES_DOCUMENTS_1_FROM_DOCUMENTS_TITLE",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidates_hrpack_tags": {
+      "name": "hrpac_candidates_hrpack_tags",
+      "type": "link",
+      "relationship": "hrpac_candidates_hrpack_tags",
+      "source": "non-db",
+      "module": "HRPAC_TAGS",
+      "bean_name": "HRPAC_TAGS",
+      "vname": "LBL_HRPAC_CANDIDATES_HRPACK_TAGS_FROM_TAGS_TITLE",
+      "search_disabled": true,
+      "value": {
+        "relationship": {
+          "type": "many-to-many",
+          "def": {
+            "name": "hrpac_candidates_hrpack_tags",
+            "true_relationship_type": "many-to-many",
+            "from_studio": true,
+            "relationships": {
+              "hrpac_candidates_hrpack_tags": {
+                "lhs_module": "HRPAC_CANDIDATES",
+                "lhs_table": "hrpac_candidates",
+                "lhs_key": "id",
+                "rhs_module": "HRPAC_TAGS",
+                "rhs_table": "hrpac_tags",
+                "rhs_key": "id",
+                "relationship_type": "many-to-many",
+                "join_table": "hrpac_candidates_hrpack_tags",
+                "join_key_lhs": "candidate_id",
+                "join_key_rhs": "tag_id"
+              }
+            },
+            "table": "hrpac_candidates_hrpack_tags",
+            "fields": [
+              {
+                "name": "id",
+                "type": "varchar",
+                "len": 36
+              },
+              {
+                "name": "date_modified",
+                "type": "datetime"
+              },
+              {
+                "name": "deleted",
+                "type": "bool",
+                "len": "1",
+                "default": "0",
+                "required": true
+              },
+              {
+                "name": "tag_id",
+                "type": "varchar",
+                "len": 36
+              },
+              {
+                "name": "candidate_id",
+                "type": "varchar",
+                "len": 36
+              }
+            ],
+            "indices": [
+              {
+                "name": "hrpac_candidates_hrpack_tagsspk",
+                "type": "primary",
+                "fields": [
+                  "id"
+                ]
+              },
+              {
+                "name": "hrpac_candidates_hrpack_tags_alt",
+                "type": "alternate_key",
+                "fields": [
+                  "tag_id",
+                  "candidate_id"
+                ]
+              },
+              {
+                "name": "candidate_id",
+                "type": "alternate_key",
+                "fields": [
+                  "candidate_id"
+                ]
+              }
+            ],
+            "lhs_module": "HRPAC_CANDIDATES",
+            "lhs_table": "hrpac_candidates",
+            "lhs_key": "id",
+            "rhs_module": "HRPAC_TAGS",
+            "rhs_table": "hrpac_tags",
+            "rhs_key": "id",
+            "relationship_type": "many-to-many",
+            "join_table": "hrpac_candidates_hrpack_tags",
+            "join_key_lhs": "candidate_id",
+            "join_key_rhs": "tag_id"
+          },
+          "name": "hrpac_candidates_hrpack_tags",
+          "lhsLinkDef": {
+            "name": "hrpac_candidates_hrpack_tags",
+            "type": "link",
+            "relationship": "hrpac_candidates_hrpack_tags",
+            "source": "non-db",
+            "module": "HRPAC_TAGS",
+            "bean_name": "HRPAC_TAGS",
+            "vname": "LBL_HRPAC_CANDIDATES_HRPACK_TAGS_FROM_TAGS_TITLE",
+            "search_disabled": true
+          },
+          "rhsLinkDef": {
+            "name": "hrpac_candidates_hrpack_tags",
+            "type": "link",
+            "relationship": "hrpac_candidates_hrpack_tags",
+            "source": "non-db",
+            "module": "HRPAC_CANDIDATES",
+            "bean_name": "HRPAC_CANDIDATES",
+            "vname": "LBL_HRPAC_CANDIDATES_HRPACK_TAGS_FROM_HRPAC_CANDIDATES_TITLE",
+            "sub_type": "invalidation_cache_rellink"
+          }
+        }
+      }
+    },
+    "hrpac_selection_stage_hrpac_candidates_1": {
+      "name": "hrpac_selection_stage_hrpac_candidates_1",
+      "type": "link",
+      "relationship": "hrpac_selection_stage_hrpac_candidates_1",
+      "source": "non-db",
+      "module": "HRPAC_SELECTION_STAGE",
+      "bean_name": "HRPAC_SELECTION_STAGE",
+      "vname": "LBL_HRPAC_SELECTION_STAGE_HRPAC_CANDIDATES_1_FROM_HRPAC_SELECTION_STAGE_TITLE",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_vacancy_hrpac_candidates_1": {
+      "name": "hrpac_vacancy_hrpac_candidates_1",
+      "type": "link",
+      "relationship": "hrpac_vacancy_hrpac_candidates_1",
+      "source": "non-db",
+      "module": "HRPAC_VACANCY",
+      "bean_name": "HRPAC_VACANCY",
+      "vname": "LBL_HRPAC_VACANCY_HRPAC_CANDIDATES_1_FROM_HRPAC_VACANCY_TITLE",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidates_audit_hrpac_candidates": {
+      "name": "hrpac_candidates_audit_hrpac_candidates",
+      "type": "link",
+      "relationship": "hrpac_candidates_audit_hrpac_candidates",
+      "vname": "LBL_HRPAC_CANDIDATES_AUDIT_HRPAC_CANDIDATES",
+      "link_type": "one",
+      "module": "HRPAC_CANDIDATES_AUDIT",
+      "bean_name": "HRPAC_CANDIDATES_AUDIT",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_comments_unifiedSearch_field": {
+      "name": "hrpac_comments_unifiedSearch_field",
+      "required": false,
+      "vname": "LBL_HRPAC_COMMENTS_UNIFIEDSEARCH_FIELD",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": true,
+      "merge_filter": "disabled",
+      "len": "3",
+      "size": "20",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidates_jobs_unifiedSearch_field": {
+      "name": "hrpac_candidates_jobs_unifiedSearch_field",
+      "required": false,
+      "vname": "LBL_HRPAC_CANDIDATES_JOBS_UNIFIEDSEARCH_FIELD",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": true,
+      "merge_filter": "disabled",
+      "len": "3",
+      "size": "20",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidates_hrpac_candidates_sqltest": {
+      "name": "hrpac_candidates_hrpac_candidates_sqltest",
+      "type": "link",
+      "relationship": "hrpac_candidates_hrpac_candidates_sqltest",
+      "source": "non-db",
+      "module": "HRPAC_CANDIDATES_SQLTEST",
+      "bean_name": "HRPAC_CANDIDATES_SQLTEST",
+      "side": "right",
+      "vname": "LBL_HRPAC_CANDIDATES_SQLTEST_FROM_HRPAC_CANDIDATES",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidates_hrpac_new_eployee_exit": {
+      "name": "hrpac_candidates_hrpac_new_eployee_exit",
+      "type": "link",
+      "relationship": "hrpac_candidates_hrpac_new_eployee_exit",
+      "source": "non-db",
+      "module": "HRPAC_NEW_EPLOYEE_EXIT",
+      "bean_name": "HRPAC_NEW_EPLOYEE_EXIT",
+      "side": "right",
+      "vname": "LBL_HRPAC_NEW_EPLOYEE_EXIT_FROM_HRPAC_CANDIDATES",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidates_lkk_cq": {
+      "name": "hrpac_candidates_lkk_cq",
+      "type": "link",
+      "relationship": "hrpac_candidates_lkk_cq",
+      "source": "non-db",
+      "module": "LKK_CANDIDATE_QUESTIONNAIRE",
+      "bean_name": "LKK_CANDIDATE_QUESTIONNAIRE",
+      "side": "right",
+      "vname": "LBL_HRPAC_CANDIDATES_LKK_CQ",
+      "search_disabled": true,
+      "value": ""
+    },
+    "questionnaire": {
+      "url_link": true,
+      "required": false,
+      "source": "non-db",
+      "name": "questionnaire",
+      "vname": "LBL_QUESTIONNAIRE",
+      "type": "relate",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "255",
+      "size": "20",
+      "id_name": "hrpac_candidates_lkk_cq",
+      "ext2": "LKK_CANDIDATE_QUESTIONNAIRE",
+      "module": "LKK_CANDIDATE_QUESTIONNAIRE",
+      "rname": "id",
+      "quicksearch": "enabled",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "list_query_access": "disabled",
+      "search_disabled": true,
+      "value": "",
+      "visual_value": {
+        "id": "",
+        "name": ""
+      }
+    },
+    "year_of_birth": {
+      "required": false,
+      "name": "year_of_birth",
+      "vname": "LBL_YEAR_OF_BIRTH",
+      "type": "date",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Год рождения",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "enable_range_search": false,
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "telegram_checked": {
+      "required": false,
+      "name": "telegram_checked",
+      "vname": "LBL_TELEGRAM_CHECKED",
+      "type": "bool",
+      "massupdate": 0,
+      "default": "0",
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "255",
+      "size": "20",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": "0"
+    },
+    "login": {
+      "required": false,
+      "name": "login",
+      "vname": "LBL_CANDIDATE_LOGIN",
+      "type": "varchar",
+      "comments": "Генерируемый логин для входа в лкк",
+      "massupdate": 0,
+      "audited": false,
+      "importable": false,
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "len": "100",
+      "enable_range_search": false,
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "pass": {
+      "required": false,
+      "name": "pass",
+      "vname": "LBL_CANDIDATE_PASS",
+      "type": "varchar",
+      "comments": "Генерируемый пароль для входа в лкк",
+      "massupdate": 0,
+      "importable": false,
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "len": "60",
+      "enable_range_search": false,
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "decoded_pass": {
+      "name": "decoded_pass",
+      "type": "varchar",
+      "vname": "LBL_DECODED_PASS",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "date_pass_entered": {
+      "required": false,
+      "name": "date_pass_entered",
+      "vname": "LBL_DATE_PASS_ENTERED",
+      "type": "datetime",
+      "comments": "",
+      "massupdate": 0,
+      "importable": false,
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "len": "60",
+      "enable_range_search": false,
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "recognition_resume_id": {
+      "required": false,
+      "name": "recognition_resume_id",
+      "vname": "LBL_RECOGNITION_RESUME",
+      "type": "id",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": 0,
+      "audited": false,
+      "inline_edit": true,
+      "reportable": false,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 36,
+      "size": "20",
+      "search_disabled": true,
+      "value": ""
+    },
+    "pd_status": {
+      "required": false,
+      "name": "pd_status",
+      "vname": "LBL_PD_STATUS",
+      "type": "enum",
+      "massupdate": 0,
+      "default": "not_sent",
+      "no_default": false,
+      "comments": "Обработка персональных данных",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": 100,
+      "size": "20",
+      "options": {
+        "not_sent": "Не отправлено",
+        "sent": "Ожидание согласия на ОПД",
+        "accepted": "Согласие на ОПД получено",
+        "denied": "Отказ от ОПД"
+      },
+      "studio": {
+        "listview": true,
+        "popuplist": false
+      },
+      "dependency": false,
+      "search_disabled": true,
+      "autocomplete": false,
+      "value": "not_sent"
+    },
+    "vacancy_progress": {
+      "name": "vacancy_progress",
+      "vname": "LBL_VACANCY_PROGRESS",
+      "type": "text",
+      "comment": "",
+      "required": false,
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": true,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "size": "20",
+      "maxlength": "1000",
+      "search_disabled": true,
+      "value": ""
+    },
+    "comment_resume": {
+      "name": "comment_resume",
+      "vname": "LBL_COMMENT_RESUME",
+      "type": "text",
+      "comment": "Comment for resume",
+      "rows": "6",
+      "cols": "80",
+      "required": false,
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Comment for resume",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "merge_filter": "disabled",
+      "size": "20",
+      "studio": "visible",
+      "source": "non-db",
+      "search_disabled": true,
+      "value": ""
+    },
+    "vacancy_selected_for_resume": {
+      "name": "vacancy_selected_for_resume",
+      "required": false,
+      "vname": "LBL_VACANCY_SELECTED_FOR_RESUME",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "",
+      "help": "",
+      "importable": "true",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "200",
+      "size": "20",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "first_letter_of_ln": {
+      "required": false,
+      "name": "first_letter_of_ln",
+      "vname": "LBL_FIRST_LETTER_OF_LN",
+      "type": "varchar",
+      "massupdate": 0,
+      "no_default": false,
+      "comments": "Первая буква фамилии",
+      "help": "",
+      "importable": "false",
+      "duplicate_merge": "disabled",
+      "duplicate_merge_dom_value": "0",
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "len": "5",
+      "size": "5",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_data_collection_module": {
+      "name": "hrpac_data_collection_module",
+      "type": "link",
+      "relationship": "hrpac_data_collection_module_hrpac_candidates",
+      "source": "non-db",
+      "module": "HRPAC_DATA_COLLECTION_MODULE",
+      "bean_name": "hrpac_data_collection_module",
+      "vname": "LBL_HRPAC_DATA_COLLECTION_MODULE_HRPAC_CANDIDATES",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidate_hrpac_responds_link": {
+      "name": "hrpac_candidate_hrpac_responds_link",
+      "type": "link",
+      "relationship": "hrpac_candidate_hrpac_responds_rel",
+      "source": "non-db",
+      "module": "HRPAC_CANDIDATE_RESPONDS",
+      "bean_name": "HRPAC_CANDIDATE_RESPONDS",
+      "side": "right",
+      "vname": "LBL_LINK_IN_CANDIDATE_TO_RESPOND",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_candidate_hrpac_event_link": {
+      "name": "hrpac_candidate_hrpac_event_link",
+      "type": "link",
+      "relationship": "hrpac_candidates_hrpac_event_rel",
+      "source": "non-db",
+      "module": "HRPAC_EVENT",
+      "bean_name": "HRPAC_EVENT",
+      "side": "right",
+      "vname": "LBL_HRPAC_EVENT_HRPAC_CANAIDATE_FROM_HRPAC_EVENT_TITLE",
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_education_link": {
+      "name": "hrpac_education_link",
+      "type": "link",
+      "relationship": "hrpac_education_rel",
+      "source": "non-db",
+      "module": "HRPAC_EDUCATION",
+      "bean_name": "HRPAC_EDUCATION",
+      "side": "right",
+      "search_disabled": true,
+      "value": {
+        "relationship": {
+          "type": "one-to-many",
+          "def": {
+            "name": "hrpac_education_rel",
+            "lhs_module": "HRPAC_CANDIDATES",
+            "lhs_table": "hrpac_candidates",
+            "lhs_key": "id",
+            "rhs_module": "HRPAC_EDUCATION",
+            "rhs_table": "hrpac_education",
+            "rhs_key": "candidate_id",
+            "relationship_type": "one-to-many"
+          },
+          "name": "hrpac_education_rel",
+          "selfReferencing": false,
+          "lhsLinkDef": {
+            "name": "hrpac_education_link",
+            "type": "link",
+            "relationship": "hrpac_education_rel",
+            "source": "non-db",
+            "module": "HRPAC_EDUCATION",
+            "bean_name": "HRPAC_EDUCATION",
+            "side": "right",
+            "search_disabled": true
+          },
+          "rhsLinkDef": false
+        }
+      }
+    },
+    "hrpac_skills_training_link": {
+      "name": "hrpac_skills_training_link",
+      "type": "link",
+      "relationship": "hrpac_skills_training_rel",
+      "source": "non-db",
+      "module": "HRPAC_SKILLS_TRAINING",
+      "bean_name": "HRPAC_SKILLS_TRAINING",
+      "side": "right",
+      "vname": "LBL_HRPAC_SKILLS_TRAINING_SUBPANEL_TITLE",
+      "link_reportable": true,
+      "search_disabled": true,
+      "value": ""
+    },
+    "hrpac_lanquage_proficiency_link": {
+      "name": "hrpac_lanquage_proficiency_link",
+      "type": "link",
+      "relationship": "hrpac_lanquage_proficiency_rel",
+      "source": "non-db",
+      "module": "HRPAC_LANQUAGE_PROFICIENCY",
+      "bean_name": "HRPAC_LANQUAGE_PROFICIENCY",
+      "side": "right",
+      "vname": "LBL_HRPAC_LANQUAGE_PROFICIENCY_SUBPANEL_TITLE",
+      "link_reportable": true,
+      "search_disabled": true,
+      "value": {
+        "relationship": {
+          "type": "one-to-many",
+          "def": {
+            "name": "hrpac_lanquage_proficiency_rel",
+            "lhs_module": "HRPAC_CANDIDATES",
+            "lhs_table": "hrpac_candidates",
+            "lhs_key": "id",
+            "rhs_module": "HRPAC_LANQUAGE_PROFICIENCY",
+            "rhs_table": "hrpac_lanquage_proficiency",
+            "rhs_key": "candidate_id",
+            "relationship_type": "one-to-many"
+          },
+          "name": "hrpac_lanquage_proficiency_rel",
+          "selfReferencing": false,
+          "lhsLinkDef": {
+            "name": "hrpac_lanquage_proficiency_link",
+            "type": "link",
+            "relationship": "hrpac_lanquage_proficiency_rel",
+            "source": "non-db",
+            "module": "HRPAC_LANQUAGE_PROFICIENCY",
+            "bean_name": "HRPAC_LANQUAGE_PROFICIENCY",
+            "side": "right",
+            "vname": "LBL_HRPAC_LANQUAGE_PROFICIENCY_SUBPANEL_TITLE",
+            "link_reportable": true,
+            "search_disabled": true
+          },
+          "rhsLinkDef": false
+        }
+      }
+    },
+    "detail_experience": {
+      "name": "detail_experience",
+      "type": "DetailExperience",
+      "vname": "LBL_DETAIL_EXPERIENCE",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "required": false,
+      "search_disabled": true,
+      "value": [],
+      "schema": {
+        "company_name": {
+          "name": "company_name",
+          "lbl": "Название компании",
+          "type": "varchar",
+          "required": true
+        },
+        "period_begin": {
+          "name": "period_begin",
+          "lbl": "Начало периода",
+          "type": "date",
+          "required": true
+        },
+        "period_end": {
+          "name": "period_end",
+          "lbl": "Конец периода",
+          "type": "date",
+          "required": true
+        },
+        "checkbox_job_now": {
+          "name": "checkbox_job_now",
+          "lbl": "По настоящее время",
+          "type": "bool",
+          "required": false
+        },
+        "post": {
+          "name": "post",
+          "lbl": "Должность",
+          "type": "varchar",
+          "required": true
+        },
+        "post_desc": {
+          "name": "post_desc",
+          "lbl": "Описание опыта работы",
+          "type": "text",
+          "required": false
+        },
+        "period_length": {
+          "name": "period_length",
+          "lbl": "Период",
+          "type": "varchar",
+          "required": false
+        }
+      }
+    },
+    "education": {
+      "name": "education",
+      "type": "Education",
+      "vname": "LBL_EDUCATION",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "required": false,
+      "search_disabled": true,
+      "value": [],
+      "schema": {
+        "university": {
+          "name": "university",
+          "lbl": "Учебное заведение",
+          "type": "varchar",
+          "required": true
+        },
+        "specialization": {
+          "name": "specialization",
+          "lbl": "Специализация",
+          "type": "varchar",
+          "required": true
+        },
+        "year_of_graduation": {
+          "name": "year_of_graduation",
+          "lbl": "Год окончания",
+          "type": "int",
+          "required": true
+        },
+        "education_lvl": {
+          "name": "education_lvl",
+          "lbl": "Уровень образования",
+          "type": "enum",
+          "required": true,
+          "options": {
+            "none": " ",
+            "average": "Среднее",
+            "secondary_vocational": "Среднее профессиональное",
+            "unfinished_higher_education": "Неоконченное высшее",
+            "higher": "Высшее",
+            "bachelor": "Бакалавр",
+            "master": "Магистр",
+            "candidate_of_sciences": "Кандидат наук",
+            "doctor_of_sciences": "Доктор наук",
+            "school_student": "Учащийся школы"
+          }
+        }
+      }
+    },
+    "language_proficiency": {
+      "name": "language_proficiency",
+      "type": "LanguageProficiency",
+      "vname": "LBL_LANGUAGE_PROFICIENCY",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "source": "non-db",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "required": false,
+      "search_disabled": true,
+      "value": [],
+      "schema": {
+        "language_proficiency": {
+          "name": "language_proficiency",
+          "lbl": "Владение языком",
+          "type": "enum",
+          "required": true,
+          "options": {
+            "af": "Африкаанс",
+            "ar-EG": "Арабский, Египет",
+            "ar-SA": "Арабский, Саудовская Аравия",
+            "az": "Азербайджанский",
+            "bg": "Болгарский",
+            "bn": "Бенгальский",
+            "bs": "Боснийский",
+            "ca": "Каталонский",
+            "ceb": "Кебуано",
+            "cs": "Чешский",
+            "da": "Датский",
+            "de": "Немецкий",
+            "de-CH": "Немецкий, Швейцария",
+            "el": "Греческий",
+            "en": "Английский",
+            "en-GB": "Английский, Великобритания",
+            "en-US": "Английский, Соединенные Штаты",
+            "es-ES": "Испанский",
+            "es-MX": "Испанский, Мексика",
+            "es-PY": "Испанский, Парагвай",
+            "es-VE": "Испанский, Венесуэла",
+            "et": "Эстонский",
+            "eu": "Баскский",
+            "fa": "Персидский",
+            "fi": "Филиппинский",
+            "fil": "Финский",
+            "fr": "Французский",
+            "fr-CA": "Французский, Канада",
+            "gu-IN": "Гуджарати",
+            "he": "Иврит",
+            "hi": "Хинди",
+            "hr": "Хорватский",
+            "hu": "Венгерский",
+            "hy-AM": "Армянский",
+            "id": "Индонезийский",
+            "it": "Итальянский",
+            "ja": "Японский",
+            "ka": "Грузинский",
+            "ko": "Корейский",
+            "lt": "Литовский",
+            "lv": "Латышский",
+            "mk": "Македонский",
+            "nb": "Норвежский Букмол",
+            "nl": "Нидерландский",
+            "pcm": "Нигерийский Пиджин",
+            "pl": "Польский",
+            "pt-BR": "Португальский, Бразилия",
+            "pt-PT": "Португальский",
+            "ro": "Румынский",
+            "ru": "Русский",
+            "si-LK": "Сингальский",
+            "sk": "Словацкий",
+            "sl": "Словенский",
+            "sq": "Албанский",
+            "sr-CS": "Сербский (Латинский)",
+            "sv-SE": "Шведский",
+            "th": "Тайский",
+            "tl": "Тагальский",
+            "tr": "Турецкий",
+            "uk": "Украинский",
+            "ur-IN": "Урду (Индия)",
+            "ur-PK": "Урду (Пакистан)",
+            "vi": "Вьетнамский",
+            "yo": "Йоруба",
+            "zh-CN": "Китайский Упрощенный",
+            "zh-TW": "Китайский Традиционный",
+            "other": "Другое"
+          }
+        },
+        "language_proficiency_lvl": {
+          "name": "language_proficiency_lvl",
+          "lbl": "Уровень владения",
+          "type": "enum",
+          "required": true,
+          "options": {
+            "a1": "A1",
+            "a2": "A2",
+            "b1": "B1",
+            "b2": "B2",
+            "c1": "C1",
+            "c2": "C2",
+            "native": "Родной"
+          }
+        }
+      }
+    },
+    "skills_training": {
+      "name": "skills_training",
+      "type": "SkillsTraining",
+      "vname": "LBL_SKILLS_TRAINING",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "dbType": "text",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "required": false,
+      "search_disabled": true,
+      "value": [],
+      "schema": {
+        "organization": {
+          "name": "organization",
+          "lbl": "Организация",
+          "type": "varchar",
+          "required": true
+        },
+        "course_name": {
+          "name": "course_name",
+          "lbl": "Наименование курса",
+          "type": "varchar",
+          "required": true
+        },
+        "year_of_graduation": {
+          "name": "year_of_graduation",
+          "lbl": "Год окончания",
+          "type": "int",
+          "required": true
+        }
+      }
+    },
+    "nationality": {
+      "name": "nationality",
+      "type": "multienum",
+      "multiple": true,
+      "vname": "LBL_NATIONALITY",
+      "massupdate": 0,
+      "audited": false,
+      "inline_edit": false,
+      "reportable": true,
+      "unified_search": false,
+      "merge_filter": "disabled",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "required": false,
+      "options": {
+        "": "",
+        "ABU DHABI": "АБУ-ДАБИ",
+        "ADEN": "АДЕН",
+        "AFGHANISTAN": "АФГАНИСТАН",
+        "ALBANIA": "АЛБАНИЯ",
+        "ALGERIA": "АЛЖИР",
+        "AMERICAN SAMOA": "ВОСТОЧНОЕ САМОА",
+        "ANDORRA": "АНДОРРА",
+        "ANGOLA": "АНГОЛА",
+        "ANTARCTICA": "АНТАРКТИДА",
+        "ANTIGUA": "АНТИГУА",
+        "ARGENTINA": "АРГЕНТИНА",
+        "ARMENIA": "АРМЕНИЯ",
+        "ARUBA": "АРУБА",
+        "AUSTRALIA": "АВСТРАЛИЯ",
+        "AUSTRIA": "АВСТРИЯ",
+        "AZERBAIJAN": "АЗЕРБАЙДЖАН",
+        "BAHAMAS": "БАГАМСКИЕ ОСТРОВА",
+        "BAHRAIN": "БАХРЕЙН",
+        "BANGLADESH": "БАНГЛАДЕШ",
+        "BARBADOS": "БАРБАДОС",
+        "BELARUS": "БЕЛАРУССИЯ",
+        "BELGIUM": "БЕЛЬГИЯ",
+        "BELIZE": "БЕЛИЗ",
+        "BENIN": "БЕНИН",
+        "BERMUDA": "БЕРМУДСКИЕ ОСТРОВА",
+        "BHUTAN": "БУТАН",
+        "BOLIVIA": "БОЛИВИЯ",
+        "BOSNIA": "БОСНИЯ",
+        "BOTSWANA": "БОТСВАНА",
+        "BOUVET ISLAND": "ОСТРОВ БОВЕ",
+        "BRAZIL": "БРАЗИЛИЯ",
+        "BRITISH ANTARCTICA TERRITORY": "БРИТАНСКАЯ АНТАРКТИЧЕСКАЯ ТЕРРИТОРИЯ",
+        "BRITISH INDIAN OCEAN TERRITORY": "БРИТАНСКАЯ ТЕРРИТОРИЯ В ИНДИЙСКОМ ОКЕАНЕ",
+        "BRITISH VIRGIN ISLANDS": "ВИРГИНСКИЕ ОСТРОВА - ВЕЛИКОБРИТАНИЯ",
+        "BRITISH WEST INDIES": "КАРИБСКИЕ ОСТРОВА - ВЕЛИКОБРИТАНИЯ",
+        "BRUNEI": "БРУНЕЙ",
+        "BULGARIA": "БОЛГАРИЯ",
+        "BURKINA FASO": "БУРКИНА-ФАСО",
+        "BURUNDI": "БУРУНДИ",
+        "CAMBODIA": "КАМБОДЖИЯ",
+        "CAMEROON": "КАМЕРУН",
+        "CANADA": "КАНАДА",
+        "CANAL ZONE": "ЗОНА ПАНАМСКОГО КАНАЛА",
+        "CANARY ISLAND": "КАНАРСКИЕ ОСТРОВА",
+        "CAPE VERDI ISLANDS": "ОСТРОВА ЗЕЛЁНОГО МЫСА",
+        "CAYMAN ISLANDS": "КАЙМАНОВЫ ОСТРОВА",
+        "CHAD": "ЧАД",
+        "CHANNEL ISLAND UK": "НОРМАНДСКИЕ ОСТРОВА",
+        "CHILE": "ЧИЛИ",
+        "CHINA": "КИТАЙ",
+        "CHRISTMAS ISLAND": "ОСТРОВ РОЖДЕСТВА",
+        "COCOS (KEELING) ISLAND": "КОКОСОВЫЕ ОСТРОВА",
+        "COLOMBIA": "КОЛУМБИЯ",
+        "COMORO ISLANDS": "КОМОРСКИЕ ОСТРОВА",
+        "CONGO": "КОНГО",
+        "CONGO KINSHASA": "ЗАИР",
+        "COOK ISLANDS": "ОСТРОВА КУКА",
+        "COSTA RICA": "КОСТА-РИКА",
+        "CROATIA": "ХОРВАТИЯ",
+        "CUBA": "КУБА",
+        "CURACAO": "КЮРАСАО",
+        "CYPRUS": "КИПР",
+        "CZECH REPUBLIC": "ЧЕХИЯ",
+        "DAHOMEY": "БЕНИН",
+        "DENMARK": "ДАНИЯ",
+        "DJIBOUTI": "ДЖИБУТИ",
+        "DOMINICA": "ДОМИНИКА",
+        "DOMINICAN REPUBLIC": "ДОМИНИКАНСКАЯ РЕСПУБЛИКА",
+        "DUBAI": "ДУБАЙ",
+        "ECUADOR": "ЭКВАДОР",
+        "EGYPT": "ЕГИПЕТ",
+        "EL SALVADOR": "САЛЬВАДОР",
+        "EQUATORIAL GUINEA": "ЭКВАТОРИАЛЬНАЯ ГВИНЕЯ",
+        "ESTONIA": "ЭСТОНИЯ",
+        "ETHIOPIA": "ЭФИОПИЯ",
+        "FAEROE ISLANDS": "ФАРЕРСКИЕ ОСТРОВА",
+        "FALKLAND ISLANDS": "ФОЛКЛЕНДСКИЕ ОСТРОВА",
+        "FIJI": "ФИДЖИ",
+        "FINLAND": "ФИНЛЯНДИЯ",
+        "FRANCE": "ФРАНЦИЯ",
+        "FRENCH GUIANA": "ФРАНЦУЗСКАЯ ГВИАНА",
+        "FRENCH POLYNESIA": "ФРАНЦУЗСКАЯ ПОЛИНЕЗИЯ",
+        "GABON": "ГАБОН",
+        "GAMBIA": "ГАМБИЯ",
+        "GEORGIA": "ГРУЗИЯ",
+        "GERMANY": "ГЕРМАНИЯ",
+        "GHANA": "ГАНА",
+        "GIBRALTAR": "ГИБРАЛТАР",
+        "GREECE": "ГРЕЦИЯ",
+        "GREENLAND": "ГРЕНЛАНДИЯ",
+        "GUADELOUPE": "ГВАДЕЛУПА",
+        "GUAM": "ГУАМ",
+        "GUATEMALA": "ГВАТЕМАЛА",
+        "GUINEA": "ГВИНЕЯ",
+        "GUYANA": "ГАЙАНА",
+        "HAITI": "ГАИТИ",
+        "HONDURAS": "ГОНДУРАС",
+        "HONG KONG": "ГОНКОНГ",
+        "HUNGARY": "ВЕНГРИЯ",
+        "ICELAND": "ИСЛАНДИЯ",
+        "IFNI": "ИФНИ",
+        "INDIA": "ИНДИЯ",
+        "INDONESIA": "ИНДОНЕЗИЯ",
+        "IRAN": "ИРАН",
+        "IRAQ": "ИРАК",
+        "IRELAND": "ИРЛАНДИЯ",
+        "ISRAEL": "ИЗРАИЛЬ",
+        "ITALY": "ИТАЛИЯ",
+        "IVORY COAST": "БЕРЕГ СЛОНОВОЙ КОСТИ",
+        "JAMAICA": "ЯМАЙКА",
+        "JAPAN": "ЯПОНИЯ",
+        "JORDAN": "ИОРДАНИЯ",
+        "KAZAKHSTAN": "КАЗАХСТАН",
+        "KENYA": "КЕНИЯ",
+        "KOREA": "КНДР",
+        "KOREA, SOUTH": "ЮЖНАЯ КОРЕЯ",
+        "KUWAIT": "КУВЕЙТ",
+        "KYRGYZSTAN": "КИРГИЗИЯ",
+        "LAOS": "ЛАОС",
+        "LATVIA": "ЛАТВИЯ",
+        "LEBANON": "ЛЕВАН",
+        "LEEWARD ISLANDS": "ПОДВЕТРЕННЫЕ ОСТРОВА",
+        "LESOTHO": "ЛЕСОТО",
+        "LIBYA": "ЛИВИЯ",
+        "LIECHTENSTEIN": "ЛИХТЕНШТЕЙН",
+        "LITHUANIA": "ЛИТВА",
+        "LUXEMBOURG": "ЛЮКСЕМБУРГ",
+        "MACAO": "МАКАО",
+        "MACEDONIA": "МАКЕДОНИЯ",
+        "MADAGASCAR": "МАДАГАСКАР",
+        "MALAWI": "МАЛАВИ",
+        "MALAYSIA": "МАЛАЙЗИЯ",
+        "MALDIVES": "МАЛЬДИВЫ",
+        "MALI": "МАЛИ",
+        "MALTA": "МАЛЬТА",
+        "MARTINIQUE": "МАРТИНИКА",
+        "MAURITANIA": "МАВРИТАНИЯ",
+        "MAURITIUS": "МАВРИКИЙ",
+        "MELANESIA": "МЕЛАНЕЗИЯ",
+        "MEXICO": "МЕКСИКА",
+        "MOLDOVIA": "МОЛДАВИЯ",
+        "MONACO": "МОНАКО",
+        "MONGOLIA": "МОНГОЛИЯ",
+        "MOROCCO": "МАРОККО",
+        "MOZAMBIQUE": "МОЗАМБИК",
+        "MYANAMAR": "МЬЯНМА",
+        "NAMIBIA": "НАМИБИЯ",
+        "NEPAL": "НЕПАЛ",
+        "NETHERLANDS": "НИДЕРЛАНДЫ",
+        "NETHERLANDS ANTILLES": "АНТИЛЬСКИЕ ОСТРОВА",
+        "NETHERLANDS ANTILLES NEUTRAL ZONE": "АНТИЛЬСКИЕ ОСТРОВА-НЕЙТРАЛЬНАЯ ЗОНА",
+        "NEW CALADONIA": "НОВАЯ КАЛЕДОНИЯ",
+        "NEW HEBRIDES": "НОВЫЕ ГЕБРИДЫ",
+        "NEW ZEALAND": "НОВАЯ ЗЕЛАНДИЯ",
+        "NICARAGUA": "НИКАРАГУА",
+        "NIGER": "НИГЕР",
+        "NIGERIA": "НИГЕРИЯ",
+        "NORFOLK ISLAND": "НОРФОЛКСКИЕ ОСТРОВА",
+        "NORWAY": "НОРВЕГИЯ",
+        "OMAN": "ОМАН",
+        "OTHER": "Другое",
+        "PACIFIC ISLAND": "МАРИАНСКИЕ ОСТРОВА",
+        "PAKISTAN": "ПАКИСТАН",
+        "PANAMA": "ПАНАМА",
+        "PAPUA NEW GUINEA": "ПАПУА-НОВАЯ ГВИНЕЯ",
+        "PARAGUAY": "ПАРАГВАЙ",
+        "PERU": "ПЕРУ",
+        "PHILIPPINES": "ФИЛИПИНЫ",
+        "POLAND": "ПОЛЬША",
+        "PORTUGAL": "ПОРТУГАЛИЯ",
+        "PORTUGUESE TIMOR": "ВОСТОЧНЫЙ ТИМОР",
+        "PUERTO RICO": "ПУЭРТО-РИКО",
+        "QATAR": "КАТАР",
+        "REPUBLIC OF BELARUS": "БЕЛАРУСЬ",
+        "REPUBLIC OF SOUTH AFRICA": "ЮЖНО-АФРИКАНСКАЯ РЕСПУБЛИКА",
+        "REUNION": "РЕЮНЬОН",
+        "ROMANIA": "РУМЫНИЯ",
+        "RUSSIA": "РОССИЯ",
+        "RWANDA": "РУАНДА",
+        "RYUKYU ISLANDS": "ОСТРОВА РЮКЮ (НАНСЕЙ)",
+        "SABAH": "МАЛАЙЗИЯ",
+        "SAN MARINO": "САН-МАРИНО",
+        "SAUDI ARABIA": "САУДОВСКАЯ АРАВИЯ",
+        "SENEGAL": "СЕНЕГАЛ",
+        "SERBIA": "СЕРБИЯ",
+        "SEYCHELLES": "СЕЙШЕЛЬСКИЕ ОСТРОВА",
+        "SIERRA LEONE": "СЬЕРРА-ЛЕОНЕ ",
+        "SINGAPORE": "СИНГАПУР",
+        "SLOVAKIA": "СЛОВАКИЯ",
+        "SLOVENIA": "СЛОВЕНИЯ",
+        "SOMALILIAND": "СОМАЛИ",
+        "SOUTH AFRICA": "ЮЖНАЯ АФРИКА",
+        "SOUTH YEMEN": "ЮЖНЫЙ ЙЕМЕН",
+        "SPAIN": "ИСПАНИЯ",
+        "SPANISH SAHARA": "ЗАПАДНАЯ САХАРА",
+        "SRI LANKA": "ШРИ-ЛАНКА",
+        "ST. KITTS AND NEVIS": "СЕНТ-КИТС И НЕВИС",
+        "ST. LUCIA": "СЕНТ-ЛЮСИЯ",
+        "SUDAN": "СУДАН",
+        "SURINAM": "СУРИНАМ",
+        "SW AFRICA": "НАМИБИЯ",
+        "SWAZILAND": "СВАЗИЛЕНД",
+        "SWEDEN": "ШВЕЦИЯ",
+        "SWITZERLAND": "ШВЕЙЦАРИЯ",
+        "SYRIA": "СИРИЯ",
+        "TAIWAN": "ТАЙВАНЬ",
+        "TAJIKISTAN": "ТАДЖИКИСТАН",
+        "TANZANIA": "ТАНЗАНИЯ",
+        "THAILAND": "ТАИЛАНД",
+        "TONGA": "ТОНГА",
+        "TRINIDAD": "ТРИНИДАД",
+        "TUNISIA": "ТУНИС",
+        "TURKEY": "ТУРЦИЯ",
+        "UGANDA": "УГАНДА",
+        "UKRAINE": "УКРАИНА",
+        "UNITED ARAB EMIRATES": "ОАЭ",
+        "UNITED KINGDOM": "ВЕЛИКОБРИТАНИЯ",
+        "URUGUAY": "УРУГВАЙ",
+        "US PACIFIC ISLAND": "МАРИАНСКИЕ ОСТРОВА-США",
+        "US VIRGIN ISLANDS": "ВИРГИНСКИЕ ОСТРОВА-США",
+        "USA": "США",
+        "UZBEKISTAN": "УЗБЕКИСТАН",
+        "VANUATU": "ВАНУАТУ",
+        "VATICAN CITY": "ВАТИКАН",
+        "VENEZUELA": "ВЕНЕСУЭЛА",
+        "VIETNAM": "ВЬЕТНАМ",
+        "WAKE ISLAND": "ОКЕАНИЯ",
+        "WEST INDIES": "КАРИБСКИЕ ОСТРОВА",
+        "WESTERN SAHARA": "ЗАПАДНАЯ САХАРА",
+        "YEMEN": "ЙЕМЕН",
+        "ZAIRE": "ЗАИР",
+        "ZAMBIA": "ЗАМБИЯ",
+        "ZIMBABWE": "ЗИМБАБВЕ"
+      },
+      "search_disabled": true,
+      "autocomplete": false,
+      "value": ""
+    },
+    "about_oneself": {
+      "required": false,
+      "name": "about_oneself",
+      "vname": "LBL_ABOUT_ONESELF",
+      "type": "text",
+      "studio": {
+        "listview": false,
+        "popuplist": false
+      },
+      "search_disabled": true,
+      "value": ""
+    },
+    "progressbar": {
+      "name": "progressbar",
+      "vname": "LBL_PROGRESSBAR",
+      "type": "progressbar",
+      "source": "non-db",
+      "value": ""
+    },
+    "vacancy_template": {
+      "required": false,
+      "name": "vacancy_template",
+      "vname": "LBL_VACANCY_TEMPLATE",
+      "rname": "name",
+      "type": "relate",
+      "reportable": false,
+      "source": "non-db",
+      "table_options_function": {
+        "name": "get_options_for_vacancy_template",
+        "include": "modules/HRPAC_CANDIDATES/custom_get_vacancy_options.php",
+        "visibility": "disabled"
+      },
+      "table_option": {
+        "table": "hrpac_vacancy",
+        "fields_in_table": {
+          "0": "id",
+          "name": [
+            "name"
+          ]
+        }
+      },
+      "value": "",
+      "visual_value": {
+        "id": null,
+        "name": ""
+      }
+    },
+    "aos_pdf_templates": {
+      "required": false,
+      "name": "aos_pdf_templates",
+      "vname": "LBL_AOS_PDF_TEMPLATES",
+      "rname": "name",
+      "type": "relate",
+      "reportable": false,
+      "source": "non-db",
+      "table_options_function": {
+        "name": "get_options_for_aos_pdf_template",
+        "include": "modules/HRPAC_CANDIDATES/custom_get_vacancy_options.php",
+        "visibility": "disabled"
+      },
+      "table_option": {
+        "table": "aos_pdf_templates",
+        "fields_in_table": {
+          "0": "id",
+          "name": [
+            "name"
+          ]
+        }
+      },
+      "value": "",
+      "visual_value": {
+        "id": null,
+        "name": ""
+      }
+    }
+  },
+  "user_dat_format": "dd.mm.yyyy"
+}
